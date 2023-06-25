@@ -21,7 +21,7 @@ Adèle Coatanéa
 
 st.sidebar.title("A propos")
 st.sidebar.info(markdown)
-logo = "https://www.un.org/youthenvoy/wp-content/uploads/2014/09/unesco-logo-260px.jpg"
+logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 
 # Customize page title
