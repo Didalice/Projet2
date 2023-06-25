@@ -27,16 +27,15 @@ st.markdown(
 )
 
 # Données du tableau
-headers = ["Commune", "Code Postal et Code Commune", "EPCI principal"]
-
 data = [
+    ["Commune", "Code Postal et Code Commune", "EPCI principal"]
     ["Béhuard", "49170 / 49028", "Communauté Urbaine Angers Loire Métropole"],
     ["Savennières", "49170 / 49329", "Communauté Urbaine Angers Loire Métropole"],
     ["Bouchemaine", " 49080 /49035", "Communauté Urbaine Angers Loire Métropole"],
     ["Denée", "49190 / 49120", "Communauté de Communes Loire Layon et Aubance"]]
-    
-# Affichage du tableau
-st.table(data,headers=headers)
+df = pd.DataFrame(data[1:], columns=data[0])
+st.dataframe(df)
+
 def main():
     # Crée deux colonnes pour les boutons et l'image
     col1, col2, col3 = st.columns(3)
