@@ -26,17 +26,17 @@ st.markdown(
     """
 )
 
-st.title("Tableau")
 # Données du tableau
+headers = ["Commune", "Code Postal et Code Commune", "EPCI principal"]
+
 data = [
-    ["Colonne 1", "Colonne 2", "Colonne 3"],
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    ["Texte 1", "Texte 2", "Texte 3"]]
+    ["Béhuard", "49170 / 49028", "Communauté Urbaine Angers Loire Métropole"],
+    ["Savennières", "49170 / 49329", "Communauté Urbaine Angers Loire Métropole"],
+    ["Bouchemaine", " 49080 /49035", "Communauté Urbaine Angers Loire Métropole"],
+    ["Denée", "49190 / 49120", Communauté de Communes Loire Layon et Aubance"]]
     
 # Affichage du tableau
-st.table(data)
+st.table(data,headers=headers)
 def main():
     # Crée deux colonnes pour les boutons et l'image
     col1, col2, col3 = st.columns(3)
