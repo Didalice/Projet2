@@ -36,7 +36,7 @@ def main():
     st.title("Affichage d'images")
     
     # Crée deux colonnes pour les boutons et l'image
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     
     # Bouton pour afficher l'image 1
     if col1.button("1983"):
