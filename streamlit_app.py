@@ -25,6 +25,18 @@ st.markdown(
     Ce site a pour but de présenter les résultats graphiques et d’analyse obtenus par notre équipe dans le cadre du [Projet Pluridisciplinaire IG4 2022](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing). Le travail effectué durant environ trois mois porte sur l’étude d’une portion du Val de Loire située au niveau de l'Île de Béhuard, c’est-à-dire à quelques kilomètres au Sud-Ouest de la ville d’Angers et du confluent Maine-Loire (région Pays de la Loire et département du Maine et Loire).
     """
 )
+
+st.title("Tableau")
+# Données du tableau
+data = [
+    ["Colonne 1", "Colonne 2", "Colonne 3"],
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    ["Texte 1", "Texte 2", "Texte 3"]]
+    
+# Affichage du tableau
+st.table(data)
 def main():
     # Crée deux colonnes pour les boutons et l'image
     col1, col2, col3 = st.columns(3)
