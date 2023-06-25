@@ -7,16 +7,9 @@ st.set_page_config(layout="wide")
 markdown = """
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
 
-Réalisé par : 
-Adèle Coatanéa 
-Quentin Boivin 
-Amine Bastaoui
-Isabella Wokam
-Eliot Bertthié 
-Danielle Babi
+Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
 
-Site:
-Adèle Coatanéa
+Site: Adèle Coatanéa
 """
 
 st.sidebar.title("A propos")
