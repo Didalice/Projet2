@@ -27,7 +27,7 @@ st.markdown(
 )
 def main():
     # Crée deux colonnes pour les boutons et l'image
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     
     # Bouton pour afficher l'image 1
     if col1.button("Bloc diagramme de 1983"):
@@ -37,6 +37,11 @@ def main():
     # Bouton pour afficher l'image 2
     if col2.button("Bloc diagramme de 2008"):
         image_2 = "images/Bloc-diagramme_2008.png"  # Chemin vers l'image 2
+        st.image(image_2, caption="Image 2", use_column_width=True)
+        
+    # Bouton pour afficher l'image 3
+    if col3.button("Coupe paysagère en 2008"):
+        image_2 = "images/COUPE.png"  # Chemin vers l'image 3
         st.image(image_2, caption="Image 2", use_column_width=True)
 
 if __name__ == "__main__":
