@@ -32,18 +32,20 @@ st.markdown(
     Ce site a pour but de présenter les résultats graphiques et d’analyse obtenus par notre équipe dans le cadre du [Projet Pluridisciplinaire IG4 2022](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing). Le travail effectué durant environ trois mois porte sur l’étude d’une portion du Val de Loire située au niveau de l'Île de Béhuard, c’est-à-dire à quelques kilomètres au Sud-Ouest de la ville d’Angers et du confluent Maine-Loire (région Pays de la Loire et département du Maine et Loire).
     """
 )
-
 def main():
-    st.title("Bloc diagramme")
+    st.title("Affichage d'images")
     
-    # Affiche le bouton pour l'image 1
-    if st.button("1983"):
-        image_1 = "images/Bloc-diagramme_1983.png"  # Chemin vers l'image 1
+    # Crée deux colonnes pour les boutons et l'image
+    col1, col2 = st.beta_columns(2)
+    
+    # Bouton pour afficher l'image 1
+    if col1.button("Afficher Image 1"):
+        image_1 = "chemin/vers/image1.jpg"  # Chemin vers l'image 1
         st.image(image_1, caption="Image 1", use_column_width=True)
         
-    # Affiche le bouton pour l'image 2
-    if st.button("2008"):
-        image_2 = "images/Bloc-diagramme_2008.png"  # Chemin vers l'image 2
+    # Bouton pour afficher l'image 2
+    if col2.button("Afficher Image 2"):
+        image_2 = "chemin/vers/image2.jpg"  # Chemin vers l'image 2
         st.image(image_2, caption="Image 2", use_column_width=True)
 
 if __name__ == "__main__":
