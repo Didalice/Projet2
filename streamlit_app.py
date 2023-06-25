@@ -39,13 +39,13 @@ def main():
     col1, col2 = st.beta_columns(2)
     
     # Bouton pour afficher l'image 1
-    if col1.button("Afficher Image 1"):
-        image_1 = "chemin/vers/image1.jpg"  # Chemin vers l'image 1
+    if col1.button("1983"):
+        image_1 = "images/Bloc-diagramme_1983.png"  # Chemin vers l'image 1
         st.image(image_1, caption="Image 1", use_column_width=True)
         
     # Bouton pour afficher l'image 2
-    if col2.button("Afficher Image 2"):
-        image_2 = "chemin/vers/image2.jpg"  # Chemin vers l'image 2
+    if col2.button("2008"):
+        image_2 = "images/Bloc-diagramme_2008.png"  # Chemin vers l'image 2
         st.image(image_2, caption="Image 2", use_column_width=True)
 
 if __name__ == "__main__":
