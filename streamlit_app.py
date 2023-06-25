@@ -26,6 +26,12 @@ st.markdown(
     Ce site a pour but de présenter les résultats graphiques et d’analyse obtenus par notre équipe dans le cadre du [Projet Pluridisciplinaire IG4 2022](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing). Le travail effectué durant environ trois mois porte sur l’étude d’une portion du Val de Loire située au niveau de l'Île de Béhuard, c’est-à-dire à quelques kilomètres au Sud-Ouest de la ville d’Angers et du confluent Maine-Loire (région Pays de la Loire et département du Maine et Loire).
     """
 )
+st.subheader("Zones étudié")
+st.markdown(
+    """
+    Notons pour débuter que la zone étudiée grâce aux travaux photogrammétriques (voir Annexe n°1) comporte quatre communes rurales répertoriées dans le tableau ci-après. Comme nous pouvons le constater, celles-ci sont entre autres membres de deux EPCI (Etablissements Publics de Coopération Intercommunale) que sont la Communauté Urbaine Angers Loire Métropole et la Communauté de Communes Loire Layon et Aubance.
+    """
+)
 data = [
     ["Commune", "Code Postal et Code Commune", "EPCI principal"],
     ["Béhuard", "49170 / 49028", "Communauté Urbaine Angers Loire Métropole"],
