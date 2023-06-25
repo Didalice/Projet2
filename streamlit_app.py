@@ -6,6 +6,7 @@ st.set_page_config(layout="wide")
 # Customize the sidebar
 markdown = """
 [Projet Pluridisciplinaire] (https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+
 Réalisé par : 
 Adèle Coatanéa 
 Quentin Boivin 
@@ -32,16 +33,6 @@ st.markdown(
     """
 )
 
-st.header("Zone étudiée")
-
-markdown = """
-Notons pour débuter que la zone étudiée grâce aux travaux photogrammétriques (voir Annexe n°1) comporte quatre communes rurales répertoriées dans le tableau ci-après. Comme nous pouvons le constater, celles-ci sont entre autres membres de deux EPCI (Etablissements Publics de Coopération Intercommunale) que sont la Communauté Urbaine Angers Loire Métropole et la Communauté de Communes Loire Layon et Aubance.
-1. For the [GitHub repository](https://github.com/giswqs/streamlit-multipage-template) or [use it as a template](https://github.com/giswqs/streamlit-multipage-template/generate) for your own project.
-2. Customize the sidebar by changing the sidebar text and logo in each Python files.
-3. Find your favorite emoji from https://emojipedia.org.
-4. Add a new app to the `pages/` directory with an emoji in the file name, e.g., `1_🚀_Chart.py`.
-
-"""
 def main():
     st.title("Bloc diagramme")
     
@@ -59,6 +50,3 @@ if __name__ == "__main__":
     main()
 st.markdown(markdown)
 
-m = leafmap.Map(minimap_control=True)
-m.add_basemap("OpenTopoMap")
-m.to_streamlit(height=500)
