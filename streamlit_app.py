@@ -32,7 +32,7 @@ data = [["Commune", "Code Postal et Code Commune", "EPCI principal"],
         ["Savennières", "49170 / 49329", "Communauté Urbaine Angers Loire Métropole"],
         ["Bouchemaine", " 49080 /49035", "Communauté Urbaine Angers Loire Métropole"],
         ["Denée", "49190 / 49120", "Communauté de Communes Loire Layon et Aubance"]]
-df = dataframe(data[1:], columns=data[0])
+df = st.dataframe(data[1:], columns=data[0])
 st.table(df)
 def main():
     # Crée deux colonnes pour les boutons et l'image
