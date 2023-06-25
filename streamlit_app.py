@@ -33,7 +33,7 @@ data = [
     ["Béhuard", "49170 / 49028", "Communauté Urbaine Angers Loire Métropole"],
     ["Savennières", "49170 / 49329", "Communauté Urbaine Angers Loire Métropole"],
     ["Bouchemaine", " 49080 /49035", "Communauté Urbaine Angers Loire Métropole"],
-    ["Denée", "49190 / 49120", Communauté de Communes Loire Layon et Aubance"]]
+    ["Denée", "49190 / 49120", "Communauté de Communes Loire Layon et Aubance"]]
     
 # Affichage du tableau
 st.table(data,headers=headers)
