@@ -1,5 +1,6 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
+import folium
 
 markdown = """
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
