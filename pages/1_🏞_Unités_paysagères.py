@@ -31,8 +31,10 @@ st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis 
 
 
 def colors(feature):
-    Unité = str(feature['properties']['Unité'])
-    return colors_dict[Unité]
+    chaine=str(feature['properties'].values())
+    cle=int(chaine.split('[')[1].split(']')[0]))
+    
+    return colors_dict[cle]
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
@@ -76,7 +78,7 @@ with colu1:
     land_use_map='carte/pays_1982.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':1,'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=470, height=400)
   if col1.button("Carte unité paysagère 2008"):
