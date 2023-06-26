@@ -20,9 +20,10 @@ st.sidebar.image(logo)
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 
 col1, col2 = st.columns([4, 1])
+"""
 options = list(leafmap.basemaps.keys())
 index = options.index("OpenTopoMap")
-
+"""
 with col2:
     basemap = st.selectbox("Choisir la date:", options, index)
 
