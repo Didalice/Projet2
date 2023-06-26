@@ -2,7 +2,6 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import pandas as pd
 
-st.set_page_config(layout="wide")
 st.set_page_config(
     page_title="Introduction",
     page_icon="👋",
