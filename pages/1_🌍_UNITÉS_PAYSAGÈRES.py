@@ -34,13 +34,7 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([6, 1])
 
 with colu2:
-    markdown = """
-[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
-
-Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
-
-Site: Adèle Coatanéa
-"""
+    markdown = """OUI"""
 
 with colu1:
   if col1.button("Carte unité paysagère 2008"):
