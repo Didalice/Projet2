@@ -32,7 +32,7 @@ def colors(feature):
         return colors_dict[clc_niv3]
 col1, col2, col3 = st.columns(3)
 
-colu1, colu2 = st.columns([4, 1])
+colu1, colu2 = st.columns([3, 1])
 
 with colu2:
   labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road and rail networks and associated land', '221 - Vineyards', '231 - Permanent crops', '242 - Complex cultivation patterns', '311 - Broad-leaved forest', '324 - Transitional woodland-shrub', '331 - Beaches, dunes and sands', '511 - Water courses']
