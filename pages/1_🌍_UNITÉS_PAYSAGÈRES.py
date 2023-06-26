@@ -83,5 +83,5 @@ with colu1:
                   tooltip=tooltips,
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
-    folium_static(m, width=500, height=400)
+    folium_static(m, width=480, height=400)
 
