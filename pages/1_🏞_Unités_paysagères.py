@@ -73,8 +73,8 @@ with colu2:
     st.subheader('Legende :')
     for i, label in enumerate(labels):
          st.markdown(f'''<div style="display: flex; align-items: center;">
-                    <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div>
-                    <span style="font-size: 14px;">{label}</span>
+                    <div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div>
+                    <span style="font-size: 10px;">{label}</span>
                 </div>''', unsafe_allow_html=True)
 
 with colu1:
