@@ -34,7 +34,7 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([6, 1])
 
 with colu2:
-    markdown = """OUI"""
+    st.title("Legende")
 
 with colu1:
   if col1.button("Carte unité paysagère 2008"):
