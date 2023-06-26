@@ -2,6 +2,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
+import matplotlib.pyplot as plt
 
 
 markdown = """
@@ -31,10 +32,20 @@ def colors(feature):
         return colors_dict[clc_niv3]
 col1, col2, col3 = st.columns(3)
 
-colu1, colu2 = st.columns([6, 1])
+colu1, colu2 = st.columns([8, 1])
 
 with colu2:
-    st.title("Legende")
+  labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road and rail networks and associated land', '221 - Vineyards', '231 - Permanent crops', '242 - Complex cultivation patterns', '311 - Broad-leaved forest', '324 - Transitional woodland-shrub', '331 - Beaches, dunes and sands', '511 - Water courses']
+  colors = [colors_dict[label.split()[0]] for label in labels]
+  fig = plt.figure(figsize=(9, 5))
+  plt.figtext(0, 0.95, 'Land Cover:', fontsize=20, ha='left', va='top')
+  plt.subplots_adjust(left=0.1, top=0.9, bottom=0.1, right=0.9, hspace=0.1)
+  for i in range(len(labels)):
+    ax = fig.add_subplot(len(labels), 1, i+1)
+    ax.add_patch(plt.Rectangle((0, 0), 0.1, 0.5, fc=colors[i], ec='black', lw=1))
+    ax.axis('off')
+    plt.text(0.12, 0.25, labels[i], va='center', fontsize=14)
+  st.pyplot(fig)
 
 with colu1:
   if col1.button("Carte unité paysagère 2008"):
