@@ -32,7 +32,7 @@ def colors(feature):
         return colors_dict[clc_niv3]
 col1, col2, col3 = st.columns(3)
 
-colu1, colu2 = st.columns([8, 1])
+colu1, colu2 = st.columns([4, 1])
 
 with colu2:
   labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road and rail networks and associated land', '221 - Vineyards', '231 - Permanent crops', '242 - Complex cultivation patterns', '311 - Broad-leaved forest', '324 - Transitional woodland-shrub', '331 - Beaches, dunes and sands', '511 - Water courses']
@@ -83,5 +83,5 @@ with colu1:
                   tooltip=tooltips,
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
-    folium_static(m, width=400, height=400)
+    folium_static(m, width=500, height=400)
 
