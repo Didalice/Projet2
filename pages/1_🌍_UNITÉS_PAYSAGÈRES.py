@@ -27,12 +27,21 @@ index = options.index("OpenTopoMap")
 with col2:
     #basemap = st.selectbox("Choisir la date:", options, index)
     st.title("Oui")
+
+colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
+               '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
+               '331': '#f7efc7', '511': '#7ce1de'}
+def colors(feature):
+    clc_niv3 = str(feature['properties']['clc_niv3'])
+    if clc_niv3 == '24':
+        return '#e5b636'
+    elif clc_niv3 in colors_dict:
+        return colors_dict[clc_niv3]
 with col1:
     land_use_map='carte/carte_8.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
-    
     loire ='images/loire.png'
     tooltips = 'Clique aqui!'
     folium.Marker([47.396056, -0.628481], popup='<b>Loire</b><br><img src=loire style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3960075,-0.6284469,3a,75y,100.44h,90t/data=!3m8!1e1!3m6!1sAF1QipOAZLT5XJoZ6A6a27JnUr1Tv75R7iqoYXF8MXZo!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOAZLT5XJoZ6A6a27JnUr1Tv75R7iqoYXF8MXZo%3Dw203-h100-k-no-pi-0-ya87.22005-ro-0-fo100!7i9728!8i4864">Google street view</a> ', 
