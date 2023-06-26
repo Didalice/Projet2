@@ -50,15 +50,17 @@ def bouton():
 
 col1, col2, col3 = st.columns(3)
 
-colu1, colu2 = st.columns([3, 3])
+colu1, colu2 = st.columns([5, 3])
 
 with colu2:
-  labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires et espaces associés', '221 - Vignobles', '231 - Prairies et autres surfaces toujours en herbe à usage agricole', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
-  color = [colors_dict[label.split()[0]] for label in labels]
-  st.subheader('Legende :')
-  for i, label in enumerate(labels):
-    st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
-
+    labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires et espaces associés', '221 - Vignobles', '231 - Prairies et autres surfaces toujours en herbe à usage agricole', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
+    color = [colors_dict[label.split()[0]] for label in labels]
+    st.subheader('Legende :')
+    for i, label in enumerate(labels):
+         st.markdown(f'''<div style="display: flex; align-items: center;">
+                    <div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div>
+                    <span style="font-size: 10px;">{label}</span>
+                </div>''', unsafe_allow_html=True)
 
 with colu1:
   if col1.button("Carte occupation du sol 1982"):
@@ -67,14 +69,14 @@ with colu1:
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
-    folium_static(m, width=470, height=400)
+    folium_static(m, width=440, height=400)
   if col1.button("Carte occupation du sol 2008"):
     land_use_map='carte/occ_2008.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
-    folium_static(m, width=470, height=400)
+    folium_static(m, width=440 height=400)
 
 st.markdown("L’étude plus précise de la répartition de l’occupation des sols d’un espace est également un moyen de mettre en évidence certaines évolutions. Après avoir abordé ces dernières avec une vision générale dans la partie précédente, nous allons à présent utiliser des données chiffrées et plus précises pour renforcer nos observations. Pour réaliser les cartes et diagrammes relatifs à l’occupation des sols de notre secteur d’étude, nous avons utilisé les photographies de 1982 et 2008 à notre disposition. Nous avons également adopté la nomenclature de niveau 3 de la base de données Corine Land Cover pour représenter et nommer les différents types d’espace.")
 st.subheader("A - Une diminution de la superficie des prairies au profit des espaces cultivés")
