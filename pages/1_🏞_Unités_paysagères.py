@@ -72,8 +72,10 @@ with colu2:
     color = [colors_dict[label.split()[0]] for label in labels]
     st.subheader('Legende :')
     for i, label in enumerate(labels):
-        st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
-
+         st.markdown(f'''<div style="display: flex; align-items: center;">
+                    <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div>
+                    <span style="font-size: 14px;">{label}</span>
+                </div>''', unsafe_allow_html=True)
 
 with colu1:
   if col1.button("Carte unité paysagère 1982"):
