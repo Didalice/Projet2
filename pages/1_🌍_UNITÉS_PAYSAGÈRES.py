@@ -77,4 +77,6 @@ with col1:
                   tooltip=tooltips,
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
-    folium_static(m)
+    width = None
+    height = 800
+    m.to_streamlit(width, height)
