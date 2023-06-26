@@ -3,8 +3,8 @@ import leafmap.foliumap as leafmap
 import pandas as pd
 
 st.set_page_config(
-    page_title="Introduction",
-    page_icon="👋",
+    page_title="Projet Pluridisciplinaire",
+    page_icon="🗺️",
 )
 # Customize the sidebar
 markdown = """
