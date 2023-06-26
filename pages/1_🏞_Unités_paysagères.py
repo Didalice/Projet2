@@ -33,7 +33,8 @@ st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis 
 def colors(feature):
     chaine=str(feature['properties'].values())
     cle=str(chaine.split('[')[1].split(']')[0])
-    return colors_dict[cle]
+    st.markdown(cle)
+    return 1
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
