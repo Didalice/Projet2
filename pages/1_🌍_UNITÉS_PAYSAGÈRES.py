@@ -30,25 +30,7 @@ def colors(feature):
         return '#e5b636'
     elif clc_niv3 in colors_dict:
         return colors_dict[clc_niv3]
-col1, col2, col3 = st.columns(3)
-
-colu1, colu2 = st.columns([3, 3])
-
-with colu2:
-  labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires et espaces associés', '221 - Vignobles', '231 - Prairies et autres surfaces toujours en herbe à usage agricole', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
-  color = [colors_dict[label.split()[0]] for label in labels]
-  st.subheader('Legende :')
-  for i, label in enumerate(labels):
-    st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
-
-
-with colu1:
-  if col1.button("Carte unité paysagère 2008"):
-    land_use_map='carte/occ_1982.geojson'
-    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
-    loire ='images/loire.png'
+def bouton(): loire ='images/loire.png'
     tooltips = 'Clique aqui!'
     folium.Marker([47.396056, -0.628481], popup='<b>Loire</b><br><img src=loire style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3960075,-0.6284469,3a,75y,100.44h,90t/data=!3m8!1e1!3m6!1sAF1QipOAZLT5XJoZ6A6a27JnUr1Tv75R7iqoYXF8MXZo!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOAZLT5XJoZ6A6a27JnUr1Tv75R7iqoYXF8MXZo%3Dw203-h100-k-no-pi-0-ya87.22005-ro-0-fo100!7i9728!8i4864">Google street view</a> ', 
                   tooltip=tooltips,
@@ -83,5 +65,31 @@ with colu1:
                   tooltip=tooltips,
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
+col1, col2, col3 = st.columns(3)
+
+colu1, colu2 = st.columns([3, 3])
+
+with colu2:
+  labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires et espaces associés', '221 - Vignobles', '231 - Prairies et autres surfaces toujours en herbe à usage agricole', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
+  color = [colors_dict[label.split()[0]] for label in labels]
+  st.subheader('Legende :')
+  for i, label in enumerate(labels):
+    st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
+
+
+with colu1:
+  if col1.button("Carte unité paysagère 1982"):
+    land_use_map='carte/occ_1982.geojson'
+    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
+    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
+    bouton
+    folium_static(m, width=470, height=400)
+  if col1.button("Carte unité paysagère 2008"):
+    land_use_map='carte/occ_2008.geojson'
+    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
+    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
+    bouton
     folium_static(m, width=470, height=400)
 
