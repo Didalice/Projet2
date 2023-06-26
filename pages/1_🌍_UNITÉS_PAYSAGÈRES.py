@@ -42,7 +42,7 @@ Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam
 Site: Adèle Coatanéa
 """
 
-with colu3:
+with colu1:
   if col1.button("Carte unité paysagère 2008"):
     land_use_map='carte/carte_8.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
