@@ -36,22 +36,28 @@ def bouton():
   
 col1, col2, col3 = st.columns(3)
 
-
+def colors(feature):
+  DN = str(feature['properties']['DN'])
+  if DN ='1':
+    return 1
+  return 0
+  
 if col1.button("Carte unité paysagère 1982"):
   land_use_map='carte/occ_1982.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
   folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
-  folium_static(m, width=470, height=400)
+  folium_static(m)
+
 
 if col1.button("Carte unité paysagère 2008"):
   land_use_map='carte/occ_2008.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
+  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':opa(feature), 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
-  folium_static(m, width=470, height=400)
+  folium_static(m)
 
 st.subheader("A - L’impact d’une unification de l’agriculture au cours du temps")
 st.markdown("Les modes de pratique agricole ont évolué depuis plusieurs siècles. Durant les cinquante dernières années, la mécanisation progressive de l’agriculture a induit une augmentation du nombre et de la taille des champs cultivés partout en France. Notre secteur n’échappe pas à la règle même si les changements morphologiques induits restent relativement limités. On remarque en effet une augmentation de la taille des différentes parcelles agricoles tout particulièrement sur la zone au sud de la Loire.")
