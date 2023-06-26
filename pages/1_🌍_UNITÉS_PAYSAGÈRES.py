@@ -20,16 +20,35 @@ st.sidebar.image(logo)
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 
+colors_dict = {
+    '1': '#FF0000',   # Rouge
+    '2': '#00FF00',   # Vert
+    '3': '#0000FF',   # Bleu
+    '6': '#FFFF00',   # Jaune
+    '7': '#FF00FF',   # Magenta
+    '8': '#00FFFF',   # Cyan
+    '9': '#FFA500',   # Orange
+    '12': '#800080',  # Violet
+    '13': '#008000',  # Vert foncé
+    '14': '#000080',  # Bleu foncé
+    '15': '#800000',  # Rouge foncé
+    '16': '#FF69B4',  # Rose
+    '18': '#008080',  # Vert-bleu
+    '20': '#FF8C00',  # Orange foncé
+    '21': '#FF1493',  # Rose foncé
+    '22': '#800000',  # Rouge foncé
+    '23': '#8B4513',  # Brun
+    '25': '#000000',  # Noir
+    '26': '#808080',  # Gris
+    '27': '#C0C0C0',  # Argent
+    '30': '#FFFF00',  # Jaune
+    '31': '#00FFFF',  # Turquoise
+    '40': '#808080'   # Gris
+}
 
-colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
-               '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
-               '331': '#f7efc7', '511': '#7ce1de'}
 def colors(feature):
-    clc_niv3 = str(feature['properties']['clc_niv3'])
-    if clc_niv3 == '24':
-        return '#e5b636'
-    elif clc_niv3 in colors_dict:
-        return colors_dict[clc_niv3]
+    Unité = str(feature['properties']['Unité'])
+    return colors_dict[Unité]
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
@@ -50,7 +69,19 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([3, 3])
 
 with colu2:
-  labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires et espaces associés', '221 - Vignobles', '231 - Prairies et autres surfaces toujours en herbe à usage agricole', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
+labels = [
+    '1 - Plateau viticole de la commune de Savennières',
+    '2 - Coteau boisé de la commune de Savennières',
+    '3 - Terrasse alluviale boisée de la commune de Savennières',
+    '4 - Terrasse alluviale agricole semi-bocagère de la commune de Denée',
+    '5 - Terrasse alluviale agricole semi-bocagère de l\'île de la commune de Béhuard',
+    '6 - Prairies bocagères sur la terrasse alluviale de la commune de Denée',
+    '7 - Village de Savennières',
+    '8 - Village de Denée',
+    '9 - Réseau routier et ferroviaire',
+    '10 - Lit de la Loire',
+    '11 - Dépôts de sédiments dans le lit de la Loire',
+    '12 - Bras de la Loire'  
   color = [colors_dict[label.split()[0]] for label in labels]
   st.subheader('Legende :')
   for i, label in enumerate(labels):
@@ -59,16 +90,16 @@ with colu2:
 
 with colu1:
   if col1.button("Carte unité paysagère 1982"):
-    land_use_map='carte/occ_1982.geojson'
+    land_use_map='carte/pays_1982.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
+    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=470, height=400)
   if col1.button("Carte unité paysagère 2008"):
-    land_use_map='carte/occ_2008.geojson'
+    land_use_map='carte/pays_2008.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
+    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=470, height=400)
