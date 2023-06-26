@@ -25,7 +25,7 @@ st.title("L’identification de grandes unités paysagères; un moyen de caract�
 colors_dict = {'1': '#ffb266ff', '2': '#769674ff', '3': '#9cf5a2ff',
                '4': '#91cd96ff', '5': '#ccedb4ff', '6': '#8ff17eff',
                '7': '#b894e3ff', '8': '#c1b1d4ff', '9': '#d5676bff',
-               '10': '#90befaff', '11': '#f4eeeaff', '12': '#90eefaff'}
+               '10': '#90befaff', '11': '#f4eeeaff', '12': '#90eefaff','13': '#769674ff'}
 
 st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux.")
 
@@ -33,8 +33,7 @@ st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis 
 def colors(feature):
     chaine=str(feature['properties'].values())
     cle=str(chaine.split('[')[1].split(']')[0])
-    st.markdown(cle)
-    return 1
+    return colors_dict[cle]
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
