@@ -84,14 +84,14 @@ with colu1:
     tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
-    folium_static(m, width=460, height=400)
+    folium_static(m, width=450, height=400)
   if col1.button("Carte unité paysagère 2008"):
     land_use_map='carte/pays_2008.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
-    folium_static(m, width=470, height=400)
+    folium_static(m, width=450, height=400)
 st.subheader("A - Une évolution des éléments du lit de la Loire")
 st.markdown("L’un des points marquants mis en évidence par ces deux cartes concerne l’évolution de la morphologie des éléments paysagers au sein même du lit de la Loire. En effet, le caractère particulièrement changeant et imprévisible du fleuve est à l’origine de sa réputation populaire de “dernier fleuve sauvage d’Europe”. Ainsi, nous observons aisément une radicale différence entre les formes et dispositions des zones d'atterrissement sableux actuels et passés. Les mécanismes à l'origine de ces évolutions sont connus. Parmi eux, on peut entre autres citer une succession de crues violentes au cours des dernières décennies et une extraction de sable importante pendant une longue période (à l’origine d’un creusement progressif du lit du fleuve). Néanmoins, on constate que la morphologie globale de la Loire n’a pas subi d’évolution particulièrement notable sur la portion que nous étudions. Il en est de même pour un de ses bras, le Louet, également visible au sein de notre périmètre d’étude.")
 st.subheader("B - Une augmentation de la taille des zones bâties")
