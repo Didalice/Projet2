@@ -19,32 +19,18 @@ logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
-
-colors_dict = {
-    '1': '#FF0000',   # Rouge
-    '2': '#00FF00',   # Vert
-    '3': '#0000FF',   # Bleu
-    '6': '#FFFF00',   # Jaune
-    '7': '#FF00FF',   # Magenta
-    '8': '#00FFFF',   # Cyan
-    '9': '#FFA500',   # Orange
-    '12': '#800080',  # Violet
-    '13': '#008000',  # Vert foncé
-    '14': '#000080',  # Bleu foncé
-    '15': '#800000',  # Rouge foncé
-    '16': '#FF69B4',  # Rose
-    '18': '#008080',  # Vert-bleu
-    '20': '#FF8C00',  # Orange foncé
-    '21': '#FF1493',  # Rose foncé
-    '22': '#800000',  # Rouge foncé
-    '23': '#8B4513',  # Brun
-    '25': '#000000',  # Noir
-    '26': '#808080',  # Gris
-    '27': '#C0C0C0',  # Argent
-    '30': '#FFFF00',  # Jaune
-    '31': '#00FFFF',  # Turquoise
-    '40': '#808080'   # Gris}
-
+colors_dict = {'1': '#FF0000',   # Rouge
+               '2': '#00FF00',   # Vert
+               '3': '#0000FF',   # Bleu
+               '4': '#FFFF00',   # Jaune
+               '5': '#FF00FF',   # Magenta
+               '6': '#00FFFF',   # Cyan
+               '7': '#FFA500',   # Orange
+               '8': '#800080',   # Violet
+               '9': '#008000',   # Vert foncé
+               '10': '#800000',  # Marron
+               '11': '#008080',  # Bleu-vert
+               '12': '#000080'   # Bleu foncé}
 def colors(feature):
     Unité = str(feature['properties']['Unité'])
     return colors_dict[Unité]
@@ -68,19 +54,18 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([3, 3])
 
 with colu2:
-    labels=[
-        '1 - Plateau viticole de la commune de Savennières',
-        '2 - Coteau boisé de la commune de Savennières',
-        '3 - Terrasse alluviale boisée de la commune de Savennières',
-        '4 - Terrasse alluviale agricole semi-bocagère de la commune de Denée',
-        '5 - Terrasse alluviale agricole semi-bocagère de l\'île de la commune de Béhuard',
-        '6 - Prairies bocagères sur la terrasse alluviale de la commune de Denée',
-        '7 - Village de Savennières',
-        '8 - Village de Denée',
-        '9 - Réseau routier et ferroviaire',
-        '10 - Lit de la Loire',
-        '11 - Dépôts de sédiments dans le lit de la Loire',
-        '12 - Bras de la Loire']
+    labels=['1 - Plateau viticole de la commune de Savennières',
+            '2 - Coteau boisé de la commune de Savennières',
+            '3 - Terrasse alluviale boisée de la commune de Savennières',
+            '4 - Terrasse alluviale agricole semi-bocagère de la commune de Denée',
+            '5 - Terrasse alluviale agricole semi-bocagère de l\'île de la commune de Béhuard',
+            '6 - Prairies bocagères sur la terrasse alluviale de la commune de Denée',
+            '7 - Village de Savennières',
+            '8 - Village de Denée',
+            '9 - Réseau routier et ferroviaire',
+            '10 - Lit de la Loire',
+            '11 - Dépôts de sédiments dans le lit de la Loire',
+            '12 - Bras de la Loire']
     color = [colors_dict[label.split()[0]] for label in labels]
     st.subheader('Legende :')
     for i, label in enumerate(labels):
