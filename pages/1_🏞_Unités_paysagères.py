@@ -54,7 +54,7 @@ def bouton():
     folium.Marker([47.3855089,-0.6449059], popup='<b>Route et train</b><br><img src=route style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3855089,-0.6449059,3a,75y,257.94h,85.47t/data=!3m6!1e1!3m4!1sA5qNG_T2NEffmnxay7QElQ!2e0!7i16384!8i8192">Google street view</a> ', tooltip=tooltips,icon = folium.Icon(icon='star', color = 'black')).add_to(m)
 col1, col2, col3 = st.columns(3)
 
-colu1, colu2 = st.columns([3, 2])
+colu1, colu2 = st.columns([3, 1])
 
 with colu2:
     labels=['1 - Plateau viticole de la commune de Savennières',
