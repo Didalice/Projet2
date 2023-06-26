@@ -26,9 +26,7 @@ with col2:
 
 with col1:
     land_use_map='carte/carte_8.geojson'
-    m=folium.Map(location=[47.389468, -0.633296],    
-    zoom_start=14
-        )
+    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,
                name='land use map',
