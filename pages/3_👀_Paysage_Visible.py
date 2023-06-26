@@ -17,7 +17,7 @@ st.sidebar.info(markdown)
 logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 
-st.title("Divers mécanismes à l’origine de ces évolutions")
+st.title("Divers mécanismes à l’origine de ces évolutionserfef")
 st.markdown("Nous allons maintenant évoquer les grands mécanismes à l’origine des évolutions morphologiques observées. Cela revient à mettre en évidence les systèmes agraires choisis ainsi que les modes de réflexion quant à la question paysagère au cours des décennies.")
 def bouton(): 
   loire ='images/loire.png'
