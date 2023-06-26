@@ -35,7 +35,7 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([3, 1])
 
 with colu2:
-  labels = ['111-Tissu urbain continu','112 - Tissu urbain discontinu','122-Réseaux routiers et ferroviaires','221-Vignobles','231-Cultures permanentes','242-Cultures complexes','311-Forêts feuillues','324-Forêts arbustives','331-Plages et dunes','511-Cours d\'eau']
+  labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires', '221 - Vignobles', '231 - Cultures permanentes', '242 - Cultures complexes', '311 - Forêts feuillues', '324 - Forêts arbustives', '331 - Plages et dunes', '511 - Cours d\'eau']
   color = [colors_dict[label.split()[0]] for label in labels]
   st.markdown('<h2 style="text-align: left;">Land Cover:</h2>', unsafe_allow_html=True)
   for i, label in enumerate(labels):
