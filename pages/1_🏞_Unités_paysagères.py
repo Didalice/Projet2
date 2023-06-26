@@ -18,7 +18,7 @@ st.sidebar.info(markdown)
 logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 
-st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés wesj")
+st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 colors_dict = {'1': '#ffb266ff', '2': '#769674ff', '3': '#9cf5a2ff',
                '4': '#91cd96ff', '5': '#ccedb4ff', '6': '#8ff17eff',
                '7': '#b894e3ff', '8': '#c1b1d4ff', '9': '#d5676bff',
