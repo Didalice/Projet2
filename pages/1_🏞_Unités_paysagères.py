@@ -57,17 +57,17 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([3, 1])
 
 with colu2:
-    labels=['1 - Plateau viticole de la commune de Savennières',
-            '5 - Coteau boisé de la commune de Savennières',
-            '12 - Terrasse alluviale boisée de la commune de Savennières',
-            '11 - Terrasse alluviale agricole semi-bocagère de la commune de Denée',
-            '3 - Terrasse alluviale agricole semi-bocagère de l\'île de la commune de Béhuard',
-            '4 - Prairies bocagères sur la terrasse alluviale de la commune de Denée',
+    labels=['1 - Plateau viticole',
+            '5 - Coteau boisé',
+            '12 - Terrasse alluviale boisée',
+            '11 - Terrasse alluviale agricole semi-bocagère',
+            '3 - Terrasse alluviale agricole semi-bocagère',
+            '4 - Prairies bocagères sur la terrasse alluviale',
             '2 - Village de Savennières',
             '9 - Village de Denée',
             '6 - Réseau routier et ferroviaire',
             '7 - Lit de la Loire',
-            '10 - Dépôts de sédiments dans le lit de la Loire',
+            '10 - Dépôts de sédiments',
             '8 - Bras de la Loire']
     color = [colors_dict[label.split()[0]] for label in labels]
     st.subheader('Legende :')
