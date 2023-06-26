@@ -35,6 +35,8 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([8, 1])
 
 with colu2:
+  st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
+  """
   labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road and rail networks and associated land', '221 - Vineyards', '231 - Permanent crops', '242 - Complex cultivation patterns', '311 - Broad-leaved forest', '324 - Transitional woodland-shrub', '331 - Beaches, dunes and sands', '511 - Water courses']
   colors = [colors_dict[label.split()[0]] for label in labels]
   fig = plt.figure(figsize=(9, 5))
@@ -45,7 +47,8 @@ with colu2:
     ax.add_patch(plt.Rectangle((0, 0), 0.1, 0.5, fc=colors[i], ec='black', lw=1))
     ax.axis('off')
     plt.text(0.12, 0.25, labels[i], va='center', fontsize=14)
-  st.pyplot(fig)
+  st.pyplot(fig)"""
+  
 
 with colu1:
   if col1.button("Carte unité paysagère 2008"):
