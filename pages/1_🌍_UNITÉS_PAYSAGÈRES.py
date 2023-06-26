@@ -70,6 +70,4 @@ if col1.button("Carte unité paysagère 2008"):
                   tooltip=tooltips,
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
-    width = None
-    height = 800
-    m.folium(width, height)
+    folium_static(m)
