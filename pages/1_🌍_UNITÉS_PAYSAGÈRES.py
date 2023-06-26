@@ -19,14 +19,6 @@ st.sidebar.image(logo)
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 
-col1, col2 = st.columns([4, 1])
-"""
-options = list(leafmap.basemaps.keys())
-index = options.index("OpenTopoMap")
-"""
-with col2:
-    #basemap = st.selectbox("Choisir la date:", options, index)
-    st.title("Oui")
 
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
@@ -37,7 +29,8 @@ def colors(feature):
         return '#e5b636'
     elif clc_niv3 in colors_dict:
         return colors_dict[clc_niv3]
-with col1:
+col1, col2, col3 = st.columns(3)
+if col1.button("Carte unité paysagère 2008"):
     land_use_map='carte/carte_8.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
