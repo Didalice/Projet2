@@ -22,12 +22,9 @@ options = list(leafmap.basemaps.keys())
 index = options.index("OpenTopoMap")
 
 with col2:
-
     basemap = st.selectbox("Choisir la date:", options, index)
 
-
 with col1:
-
     land_use_map='carte/carte_8.geojson'
     m=folium.Map(location=[47.389468, -0.633296],    
     zoom_start=14,
