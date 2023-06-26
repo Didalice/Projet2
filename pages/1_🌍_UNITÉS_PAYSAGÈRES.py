@@ -36,11 +36,11 @@ colu1, colu2 = st.columns([8, 1])
 
 with colu2:
   labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road and rail networks and associated land', '221 - Vineyards', '231 - Permanent crops', '242 - Complex cultivation patterns', '311 - Broad-leaved forest', '324 - Transitional woodland-shrub', '331 - Beaches, dunes and sands', '511 - Water courses']
-  colors = [colors_dict[label.split()[0]] for label in labels]
+  color = [colors_dict[label.split()[0]] for label in labels]
   st.markdown('<h2 style="text-align: left;">Land Cover:</h2>', unsafe_allow_html=True)
   for i, label in enumerate(labels):
-    st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {colors[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
-  
+    st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
+
 
 with colu1:
   if col1.button("Carte unité paysagère 2008"):
