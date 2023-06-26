@@ -43,8 +43,7 @@ colors_dict = {
     '27': '#C0C0C0',  # Argent
     '30': '#FFFF00',  # Jaune
     '31': '#00FFFF',  # Turquoise
-    '40': '#808080'   # Gris
-}
+    '40': '#808080'   # Gris}
 
 def colors(feature):
     Unité = str(feature['properties']['Unité'])
@@ -69,23 +68,23 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([3, 3])
 
 with colu2:
-labels = [
-    '1 - Plateau viticole de la commune de Savennières',
-    '2 - Coteau boisé de la commune de Savennières',
-    '3 - Terrasse alluviale boisée de la commune de Savennières',
-    '4 - Terrasse alluviale agricole semi-bocagère de la commune de Denée',
-    '5 - Terrasse alluviale agricole semi-bocagère de l\'île de la commune de Béhuard',
-    '6 - Prairies bocagères sur la terrasse alluviale de la commune de Denée',
-    '7 - Village de Savennières',
-    '8 - Village de Denée',
-    '9 - Réseau routier et ferroviaire',
-    '10 - Lit de la Loire',
-    '11 - Dépôts de sédiments dans le lit de la Loire',
-    '12 - Bras de la Loire'  
-  color = [colors_dict[label.split()[0]] for label in labels]
-  st.subheader('Legende :')
-  for i, label in enumerate(labels):
-    st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
+    labels=[
+        '1 - Plateau viticole de la commune de Savennières',
+        '2 - Coteau boisé de la commune de Savennières',
+        '3 - Terrasse alluviale boisée de la commune de Savennières',
+        '4 - Terrasse alluviale agricole semi-bocagère de la commune de Denée',
+        '5 - Terrasse alluviale agricole semi-bocagère de l\'île de la commune de Béhuard',
+        '6 - Prairies bocagères sur la terrasse alluviale de la commune de Denée',
+        '7 - Village de Savennières',
+        '8 - Village de Denée',
+        '9 - Réseau routier et ferroviaire',
+        '10 - Lit de la Loire',
+        '11 - Dépôts de sédiments dans le lit de la Loire',
+        '12 - Bras de la Loire']
+    color = [colors_dict[label.split()[0]] for label in labels]
+    st.subheader('Legende :')
+    for i, label in enumerate(labels):
+        st.markdown(f'''<div style="display: flex; align-items: center;"> <div style="background-color: {color[i]}; width: 20px; height: 20px; margin-right: 10px;"></div><span>{label}</span></div>''', unsafe_allow_html=True)
 
 
 with colu1:
