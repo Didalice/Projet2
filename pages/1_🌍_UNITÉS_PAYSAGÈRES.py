@@ -30,7 +30,20 @@ def colors(feature):
     elif clc_niv3 in colors_dict:
         return colors_dict[clc_niv3]
 col1, col2, col3 = st.columns(3)
-if col1.button("Carte unité paysagère 2008"):
+
+colu1, colu2 = st.columns([6, 1])
+
+with colu2:
+    markdown = """
+[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+
+Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+
+Site: Adèle Coatanéa
+"""
+
+with colu3:
+  if col1.button("Carte unité paysagère 2008"):
     land_use_map='carte/carte_8.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
@@ -71,3 +84,4 @@ if col1.button("Carte unité paysagère 2008"):
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
     folium_static(m)
+
