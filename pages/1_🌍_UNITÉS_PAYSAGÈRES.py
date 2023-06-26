@@ -19,10 +19,10 @@ logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
-colors_dict = {'1': '#FF0000', '2': '#00FF00','3': '#0000FF',
-               '4': '#FFFF00', '5': '#FF00FF','6': '#00FFFF',
-               '7': '#FFA500', '8': '#800080','9': '#008000',
-               '10': '#800000', '11': '#008080','12': '#000080'}
+colors_dict = {'1': '#ffb266ff', '2': '#769674ff', '3': '#9cf5a2ff',
+               '4': '#91cd96ff', '5': '#ccedb4ff', '6': '#8ff17eff',
+               '7': '#b894e3ff', '8': '#c1b1d4ff', '9': '#d5676bff',
+               '10': '#90befaff', '11': '#f4eeeaff', '12': '#90eefaff'}
 
 def colors(feature):
     Unité = str(feature['properties']['Unité'])
