@@ -1,6 +1,8 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
+from streamlit_folium import folium_static
+
 
 markdown = """
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -28,10 +30,7 @@ with col1:
     land_use_map='carte/carte_8.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,
-                   name='land use map',
-                   style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},
-                   tooltip=tooltip).add_to(m)
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     
     loire ='images/loire.png'
     tooltips = 'Clique aqui!'
@@ -68,4 +67,4 @@ with col1:
                   tooltip=tooltips,
                   icon = folium.Icon(icon='star', color = 'black')
                  ).add_to(m)
-    m
+    folium_static(m)
