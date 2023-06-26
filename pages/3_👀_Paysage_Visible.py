@@ -37,9 +37,9 @@ def bouton():
 col1, col2, col3 = st.columns(3)
 
 def opa(feature):
-  DN = str(feature['properties']["DN"])
-  if DN =='1':
-    return 1
+  for feature in data['features']:
+    if feature['properties']['DN']=='1': 
+      return 1
   return 0
   
 if col1.button("Carte unité paysagère 1982"):
