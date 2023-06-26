@@ -72,4 +72,4 @@ if col1.button("Carte unité paysagère 2008"):
                  ).add_to(m)
     width = None
     height = 800
-    m.to_streamlit(width, height)
+    m.folium(width, height)
