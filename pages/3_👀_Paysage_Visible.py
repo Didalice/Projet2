@@ -38,7 +38,7 @@ col1, col2, col3 = st.columns(3)
 
 def opa(feature):
   DN = str(feature['properties']['DN'])
-  if DN ='1':
+  if DN =='1':
     return 1
   return 0
   
