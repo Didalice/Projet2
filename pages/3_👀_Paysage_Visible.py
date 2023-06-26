@@ -45,8 +45,7 @@ def opa(feature):
 if col1.button("Carte unité paysagère 1982"):
   land_use_map='carte/occ_1982.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':0, 'weight':0},tooltip=tooltip).add_to(m)
+  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':0.5, 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
   folium_static(m)
 
@@ -54,8 +53,7 @@ if col1.button("Carte unité paysagère 1982"):
 if col1.button("Carte unité paysagère 2008"):
   land_use_map='carte/occ_2008.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':opa(feature), 'weight':0},tooltip=tooltip).add_to(m)
+  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':0.5, 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
   folium_static(m)
 
