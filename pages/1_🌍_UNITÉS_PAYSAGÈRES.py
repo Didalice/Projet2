@@ -2,7 +2,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 
 markdown = """
