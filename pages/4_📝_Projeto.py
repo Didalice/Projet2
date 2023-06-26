@@ -1,5 +1,22 @@
 import streamlit as st
+import leafmap.foliumap as leafmap
+import folium
+from streamlit_folium import folium_static
 
+
+
+markdown = """
+[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+
+Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+
+Site: Adèle Coatanéa
+"""
+
+st.sidebar.title("A propos")
+st.sidebar.info(markdown)
+logo = "images/UNESCO.gif"
+st.sidebar.image(logo)
 def main():
     st.title("Autor")
     st.markdown("Ce programme a été développé par [votre nom] dans le cadre du [Projet Pluridisciplinaire].")
