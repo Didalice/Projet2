@@ -53,7 +53,7 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([5, 3])
 
 with colu2:
-    labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers et ferroviaires et espaces associés', '221 - Vignobles', '231 - Prairies et autres surfaces toujours en herbe à usage agricole', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
+    labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers, ferroviaires et espaces ass.', '221 - Vignobles', '231 - Prairies et autres surf. en herbe à usage agri.', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
     color = [colors_dict[label.split()[0]] for label in labels]
     st.subheader('Legende :')
     for i, label in enumerate(labels):
