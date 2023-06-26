@@ -45,7 +45,7 @@ with colu2:
 with colu1:
   if col1.button("Carte unité paysagère 2008"):
     land_use_map='carte/occ_1982.geojson'
-    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
+    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14, crs=EPSG3857)
     tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
     loire ='images/loire.png'
