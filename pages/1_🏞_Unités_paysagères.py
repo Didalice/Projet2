@@ -4,7 +4,10 @@ import folium
 from streamlit_folium import folium_static
 #import matplotlib.pyplot as plt
 
-
+st.set_page_config(
+    page_title="Projet Pluridisciplinaire",
+    page_icon="🗺️",
+)
 markdown = """
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
 
