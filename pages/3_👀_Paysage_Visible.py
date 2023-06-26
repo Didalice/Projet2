@@ -2,7 +2,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
-import json
+
 
 
 markdown = """
@@ -37,10 +37,9 @@ def bouton():
   
 col1, col2, col3 = st.columns(3)
 
-def opa(feature,fichier):
-  with open(fichier_geojson) as f:
-    data = json.load(f)
-  for feature in data['features']:
+def opa(features):
+  for feature in features:
+    
     if feature['properties']['DN']=='1': 
       return 1
   return 0
@@ -49,7 +48,7 @@ if col1.button("Carte unité paysagère 1982"):
   land_use_map='carte/occ_1982.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':opa(feature,land_use_map), 'weight':0},tooltip=tooltip).add_to(m)
+  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':opa(feature), 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
   folium_static(m)
 
@@ -58,7 +57,7 @@ if col1.button("Carte unité paysagère 2008"):
   land_use_map='carte/occ_2008.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':opa(feature,land_use_map), 'weight':0},tooltip=tooltip).add_to(m)
+  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':opa(feature), 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
   folium_static(m)
 
