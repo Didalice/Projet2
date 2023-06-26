@@ -20,8 +20,8 @@ st.sidebar.image(logo)
 def main():
     st.header("Projet Pluridisciplianire 2022.")
     st.subheader("Objetivo e Usuário")
-    localimage = 'images/Capture.jpg'
-    st.image(image, caption='Capture Rapport', use_column_width=True)
+    image = 'images/Capture.jpg'
+    st.image(image, caption="Capture rapport", use_column_width=True)
     
     st.write("L'objectif de ce projet est d'étudier une portion du Val de Loire située au niveau de l'Île de Béhuard. L'utilisateur de ce programme est intéressé par l'analyse graphique et les résultats obtenus à partir des travaux réalisés.")
     st.write("Ce projet réalisé sur streamlit permet une visualisation plus interactive du rapport.")
