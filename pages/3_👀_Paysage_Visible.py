@@ -36,7 +36,7 @@ def bouton():
   
 col1, col2, col3 = st.columns(3)
 
-def colors(feature):
+def opa(feature):
   DN = str(feature['properties']['DN'])
   if DN ='1':
     return 1
