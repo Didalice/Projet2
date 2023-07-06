@@ -31,13 +31,15 @@ logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
 
+
+""" #j'y arrive pas pour choisir les labels
 for i in labels:
             label = i.split(" - ")
             variable_name = 'show_' + str(label[0])
             eval(variable_name)= st.sidebar.checkbox(label[1])
     if eval(variable_name) :
         opp_dict[str(label[0])] = 0.7
-
+"""
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
@@ -49,8 +51,8 @@ st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis 
 def opacite(feature):
             chaine=str(feature['properties'].values())
             cle=str(chaine.split('[')[1].split(']')[0])
-            return opp_dict[cle]
-            
+            #return opp_dict[cle]
+            return 0.7
 def colors(feature):
     chaine=str(feature['properties'].values())
     cle=str(chaine.split('[')[1].split(']')[0])
