@@ -34,9 +34,9 @@ opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6':
 for i in labels:
     label = i.split(" - ")
     variable_name = 'show_' + str(label[0])
-    checkbox_value = st.sidebar.checkbox(label[1])
+    eval('checkbox_'+str(label[0])) = st.sidebar.checkbox(label[1])
     
-    if checkbox_value:
+    if eval('checkbox_'+str(label[0])) :
         opp_dict[str(label[0])] = 0.7
 
 
