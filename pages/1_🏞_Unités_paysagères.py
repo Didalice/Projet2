@@ -32,7 +32,8 @@ st.sidebar.image(logo)
 opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
 
 
-""" #j'y arrive pas pour choisir les labels
+""" 
+j'y arrive pas pour choisir les labels
 for i in labels:
             label = i.split(" - ")
             variable_name = 'show_' + str(label[0])
