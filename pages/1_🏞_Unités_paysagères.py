@@ -3,7 +3,18 @@ import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
 #import matplotlib.pyplot as plt
-
+labels=['1 - Plateau viticole',
+            '5 - Coteau boisé',
+            '12 - Terrasse alluviale boisée',
+            '11 - Terrasse alluviale agricole semi-bocagère',
+            '3 - Terrasse alluviale agricole semi-bocagère',
+            '4 - Prairies bocagères sur la terrasse alluviale',
+            '2 - Village de Savennières',
+            '9 - Village de Denée',
+            '6 - Réseau routier et ferroviaire',
+            '7 - Lit de la Loire',
+            '10 - Dépôts de sédiments',
+            '8 - Bras de la Loire']
 st.set_page_config(
     page_title="Projet Pluridisciplinaire",
     page_icon="🗺️",
@@ -20,6 +31,13 @@ st.sidebar.title("A propos")
 st.sidebar.info(markdown)
 logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
+opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
+for i in labels:
+    label=i.split(" - ")
+    eval('show_'+str(label[0]))=t.sidebar.checkbox(label[1])
+    if eval('show_'+str(label[0])):
+        opp_dict[str(label[0])]=0.7
+
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
@@ -29,6 +47,7 @@ colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
 
 st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux.")
 
+def opacite(feature):
 
 def colors(feature):
     chaine=str(feature['properties'].values())
@@ -57,18 +76,6 @@ col1, col2, col3 = st.columns(3)
 colu1, colu2 = st.columns([5, 3])
 
 with colu2:
-    labels=['1 - Plateau viticole',
-            '5 - Coteau boisé',
-            '12 - Terrasse alluviale boisée',
-            '11 - Terrasse alluviale agricole semi-bocagère',
-            '3 - Terrasse alluviale agricole semi-bocagère',
-            '4 - Prairies bocagères sur la terrasse alluviale',
-            '2 - Village de Savennières',
-            '9 - Village de Denée',
-            '6 - Réseau routier et ferroviaire',
-            '7 - Lit de la Loire',
-            '10 - Dépôts de sédiments',
-            '8 - Bras de la Loire']
     color = [colors_dict[label.split()[0]] for label in labels]
     st.subheader('Legende :')
     for i, label in enumerate(labels):
@@ -82,7 +89,7 @@ with colu1:
     land_use_map='carte/pays_1982.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=440, height=400)
   if col1.button("Carte unité paysagère 2008"):
