@@ -2,7 +2,6 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
-#import matplotlib.pyplot as plt
 labels=['1 - Plateau viticole',
             '5 - Coteau boisé',
             '12 - Terrasse alluviale boisée',
@@ -15,8 +14,7 @@ labels=['1 - Plateau viticole',
             '7 - Lit de la Loire',
             '10 - Dépôts de sédiments',
             '8 - Bras de la Loire']
-st.set_page_config(
-    page_title="Projet Pluridisciplinaire",
+st.set_page_config(page_title="Projet Pluridisciplinaire",
     page_icon="🗺️",
 )
 markdown = """
@@ -49,9 +47,11 @@ colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
                '7': '#90befaff', '10': '#f4eeeaff', '8': '#90eefaff','13': '#769674ff'}
 
 st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux.")
-
 def opacite(feature):
-
+            chaine=str(feature['properties'].values())
+            cle=str(chaine.split('[')[1].split(']')[0])
+            return opp_dict[cle]
+            
 def colors(feature):
     chaine=str(feature['properties'].values())
     cle=str(chaine.split('[')[1].split(']')[0])
@@ -99,7 +99,7 @@ with colu1:
     land_use_map='carte/pays_2008.geojson'
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
     tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=440, height=400)
 st.subheader("A - Une évolution des éléments du lit de la Loire")
