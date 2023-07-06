@@ -32,11 +32,14 @@ st.sidebar.info(markdown)
 logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
+
 for i in labels:
-    label=i.split(" - ")
-    eval('show_'+str(label[0]))=t.sidebar.checkbox(label[1])
-    if eval('show_'+str(label[0])):
-        opp_dict[str(label[0])]=0.7
+    label = i.split(" - ")
+    variable_name = 'show_' + str(label[0])
+    checkbox_value = t.sidebar.checkbox(label[1])
+    
+    if checkbox_value:
+        opp_dict[str(label[0])] = 0.7
 
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
