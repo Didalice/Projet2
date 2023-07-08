@@ -17,6 +17,11 @@ labels=['1 - Plateau viticole',
 st.set_page_config(page_title="Projet Pluridisciplinaire",
     page_icon="🗺️",
 )
+annee = st.sidebar.selectbox("Sélectionnez une année", ["1982", "2008"])
+if annee == "1982":
+            land_use_map = 'carte/pays_1982.geojson'
+elif annee == "2008":
+            land_use_map = 'carte/pays_2008.geojson'
 markdown = """
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
 
@@ -90,11 +95,6 @@ with colu2:
                 </div>''', unsafe_allow_html=True)
 
 with colu1:
-            annee = st.sidebar.selectbox("Sélectionnez une année", ["1982", "2008"])
-            if annee == "1982":
-                        land_use_map = 'carte/pays_1982.geojson'
-            elif annee == "2008":
-                        land_use_map = 'carte/pays_2008.geojson'
             m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
             tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
             folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
