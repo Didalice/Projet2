@@ -137,7 +137,7 @@ col1, col2, col3, col4 = st.columns(4)
 
 for i, label in enumerate(labels):
     column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
-    show_label = column.checkbox(label.split(' - ')[1], value=False, key=label, text_size='small')
+    show_label = column.checkbox(label.split(' - ')[1])
     if show_label:
         opp_dict[label.split(' - ')[0]] = 0.7
 
