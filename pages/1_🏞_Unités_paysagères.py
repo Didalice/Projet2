@@ -131,9 +131,10 @@ st.markdown(texte1)
 
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
-show_vine = st.checkbox(labels[0].split(' - ')[1])
-if show_vigne:
-    opp_dict['1']=0.7
+for label in labels:
+    show_label = st.checkbox(label.split(' - ')[1])
+    if show_label:
+        opp_dict[label.split(' - ')[0]] = 0.7
 
 if annee == "1982":
             land_use_map = 'carte/pays_1982.geojson'
