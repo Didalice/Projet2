@@ -6,10 +6,6 @@ from streamlit_folium import folium_static
 # Variable de langue
 langue = st.sidebar.selectbox(["Francais", "English", "Portugues"])
 
-# Affichage du bouton de changement de langue
-if st.sidebar.button("English" if langue == "fr" else "Français"):
-    langue = "en" if langue == "fr" else "fr"
-
 st.set_page_config(page_title="Projet Pluridisciplinaire",
     page_icon="🗺️",
 )
