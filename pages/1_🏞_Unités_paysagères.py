@@ -75,8 +75,38 @@ if langue =='English':
               '10 - Sediment Deposits',
               '8 - Loire Branch']
 
-if langue =='Portugues': 
-    propos="A propos3"
+if langue == 'Portugues':
+    propos = "Sobre"
+    t_propos = """
+    [Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+
+    Realizado por: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+
+    Site: Adèle Coatanéa
+    """
+    titre = "A identificação das grandes unidades paisagísticas; uma maneira de caracterizar globalmente as paisagens atuais e passadas"
+    texte0 = "A - Uma evolução dos elementos do leito do Loire"
+    texte1 = "Uma das primeiras formas de análise da paisagem que pode ser implementada para estudar a organização e composição de uma área é a identificação de unidades paisagísticas. Essas são definidas pelo site Géoconfluences como 'porções de espaço que constituem um conjunto relativamente homogêneo em termos de topografia, uso do espaço, cobertura vegetal ou ocupação humana'. Dentro da área do Vale do Loire que estamos analisando por meio de trabalhos fotogramétricos, diferentes conjuntos maiores aparecem nas fotografias aéreas (tanto no início dos anos 80 quanto no final dos anos 2000). Sua identificação permite caracterizar nossa área de estudo e destacar as mudanças globais."
+    sel_an = "Selecione um ano"
+    texte2 = "Um dos pontos marcantes destacados por esses dois mapas diz respeito à evolução da morfologia dos elementos paisagísticos dentro do próprio leito do Loire. Com efeito, a natureza particularmente mutável e imprevisível do rio está na origem de sua reputação popular de 'último rio selvagem da Europa'. Assim, podemos facilmente observar uma diferença radical entre as formas e disposições das áreas de deposição de areia atuais e passadas. Os mecanismos por trás dessas mudanças são conhecidos. Entre eles, podemos citar sucessivas inundações violentas nas últimas décadas e uma extração significativa de areia por um longo período (que resultou em uma escavação progressiva do leito do rio). No entanto, observamos que a morfologia geral do Loire não sofreu mudanças particularmente notáveis na seção que estamos estudando. O mesmo ocorre com um de seus braços, o Louet, também visível em nossa área de estudo."
+    texte3 = "B - Um aumento no tamanho das áreas construídas"
+    texte4 = "Além disso, podemos observar um alargamento das áreas cobertas por tecido urbano em quarenta anos. Esse fenômeno não é surpreendente, pois o aumento populacional em toda a França nas últimas décadas é um fato comprovado. Isso se reflete aqui, do ponto de vista paisagístico, em uma densificação e aumento das áreas construídas."
+    texte5 = "C - Um fenômeno de linearização das áreas arborizadas ao longo do Loire"
+    texte6 = "Além disso, um dos elementos a serem observados aqui (embora menos pronunciado do que em outras áreas do Vale do Loire) é a linearização e expansão das áreas arborizadas ao longo do rio. Nessa primeira abordagem global, esse processo de evolução é especialmente visível ao observar a unidade paisagística 'Encosta arborizada da comuna de Savennières', que passou por uma modificação em quarenta anos."
+    texte7 = "D - Uma manutenção da extensão geral de prados, áreas agrícolas e áreas arborizadas de ambos os lados do rio"
+    texte8 = "Ao mesmo tempo, observamos que a área geral de áreas não urbanizadas não sofreu mudanças significativas entre 1982 e 2008. Assim, já podemos afirmar que a área fotogramétrica na qual grande parte de nosso trabalho se baseará não é caracterizada por mudanças paisagísticas significativas."
+    labels=['1 - Planalto vitícola',
+            '5 - Encosta arborizada',
+            '12 - Terraço aluvial arborizado',
+            '11 - Terraço aluvial agrícola semi-bocage',
+            '3 - Terraço aluvial agrícola semi-bocage',
+            '4 - Prados em bocage no terraço aluvial',
+            '2 - Vila de Savennières',
+            '9 - Vila de Denée',
+            '6 - Rede rodoviária e ferroviária',
+            '7 - Leito do Loire',
+            '10 - Depósitos de sedimentos',
+            '8 - Braço do Loire']
 
 markdown = t_propos
 
