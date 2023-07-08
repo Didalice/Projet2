@@ -9,30 +9,26 @@ st.set_page_config(page_title='Projet Pluridisciplinaire',
     page_icon="🗺️",
 )
 
-# Variable de langue
 langue = st.sidebar.selectbox('langue',["Francais", "English", "Portugues"])
 
 propos="A propos"
-if langue =='English':
-    propos="A propos2"
-if langue =='Portugues': 
-    propos="A propos3"
-
-markdown = """
+t_propos="""
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
 
 Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
 
 Site: Adèle Coatanéa
 """
-
-st.sidebar.title(propos)
-st.sidebar.info(markdown)
-logo = "images/UNESCO.gif"
-
-
-st.sidebar.image(logo)
-opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
+titre="L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés"
+texte1="L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux.")
+sel_an="Selectionnez une année"
+texte2="L’un des points marquants mis en évidence par ces deux cartes concerne l’évolution de la morphologie des éléments paysagers au sein même du lit de la Loire. En effet, le caractère particulièrement changeant et imprévisible du fleuve est à l’origine de sa réputation populaire de “dernier fleuve sauvage d’Europe”. Ainsi, nous observons aisément une radicale différence entre les formes et dispositions des zones d'atterrissement sableux actuels et passés. Les mécanismes à l'origine de ces évolutions sont connus. Parmi eux, on peut entre autres citer une succession de crues violentes au cours des dernières décennies et une extraction de sable importante pendant une longue période (à l’origine d’un creusement progressif du lit du fleuve). Néanmoins, on constate que la morphologie globale de la Loire n’a pas subi d’évolution particulièrement notable sur la portion que nous étudions. Il en est de même pour un de ses bras, le Louet, également visible au sein de notre périmètre d’étude.")
+texte3="B - Une augmentation de la taille des zones bâties")
+texte4="Par ailleurs, on peut remarquer un élargissement des espaces couverts par un tissu urbanisé en une quarantaine d’années. Ce phénomène n’a bien sûr rien d’étonnant car l’augmentation démographique partout en France depuis plusieurs décennies est un élément avéré. Il se traduit ici, d’un point de vue paysager, par une densification et une augmentation des zones bâties.")
+texte5="C - Un phénomène de linéarisation des zones boisées en bord de Loire")
+texte6="De plus, l’un des éléments à noter ici (bien que moins marqué que sur d’autres zones du Val de Loire) est la linéarisation et le développement des zones boisées en bord de fleuve. Lors de cette première approche globale, ce processus d’évolution est surtout visible si l’on observe l’unité paysagère “Coteau boisé de la commune de Savennières” qui a connu une modification en quarante ans.")
+texte7="D - Un maintien de l’emprise générale des prairies, zones agricoles et zones boisées de part et d’autre du fleuve")
+texte8="Dans le même temps, on constate que la superficie générale des zones non-urbanisées n’a pas connu d’évolution majeure entre 1982 et 2008. Ainsi, nous pouvons dores et déjà affirmer que le secteur photogrammétrique sur lequel va se baser une grande partie de notre travail n’est pas caractérisé par des évolutions paysagères fortes.")
 labels=['1 - Plateau viticole',
             '5 - Coteau boisé',
             '12 - Terrasse alluviale boisée',
@@ -45,18 +41,61 @@ labels=['1 - Plateau viticole',
             '7 - Lit de la Loire',
             '10 - Dépôts de sédiments',
             '8 - Bras de la Loire']
+if langue =='English':
+    propos = "About"
+    t_propos = """
+    [Interdisciplinary Project](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+    
+    Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+    
+    Website: Adèle Coatanéa
+    """
+    titre = "Identifying Large Landscape Units: A Means to Globally Characterize Current and Past Landscapes"
+    texte1 = "One of the first methods for analyzing a landscape and studying its arrangement and composition is to identify landscape units. According to the Géoconfluences website, these units are defined as 'portions of space that constitute a relatively homogeneous ensemble in terms of topography, land use, vegetation cover, or human occupation.' Within the Val de Loire area that we are studying using photogrammetric works, different large ensembles are visible on aerial photographs, both from the early 1980s and the late 2000s. Identifying these units allows us to characterize our study area and highlight global changes."
+    sel_an = "Select a year"
+    texte2 = "One notable point highlighted by these two maps concerns the evolution of the morphology of landscape elements within the bed of the Loire River. The particularly changing and unpredictable nature of the river has earned it the popular reputation of being the 'last wild river in Europe.' Thus, we can easily observe a radical difference between the forms and arrangements of the current and past sandy landing areas. The mechanisms behind these changes are known. Among them, we can mention a series of violent floods in recent decades and extensive sand extraction over a long period (resulting in a gradual deepening of the river bed). However, we note that the overall morphology of the Loire has not undergone any particularly notable changes in the portion we are studying. The same applies to one of its branches, the Louet, which is also visible within our study area."
+    texte3 = "B - An increase in the size of built-up areas"
+    texte4 = "Furthermore, we can observe an expansion of areas covered by urban fabric over a forty-year period. This phenomenon is not surprising, as population growth throughout France in recent decades is well established. From a landscape perspective, it is manifested by densification and an increase in built-up areas."
+    texte5 = "C - Linearization of wooded areas along the Loire River"
+    texte6 = "Moreover, one noteworthy element here (although less pronounced than in other areas of the Val de Loire) is the linearization and development of wooded areas along the river. During this initial comprehensive approach, this process of evolution is particularly visible when observing the 'Wooded slope of the municipality of Savennières' landscape unit, which has undergone changes over forty years."
+    texte7 = "D - Maintenance of the overall extent of meadows, agricultural areas, and wooded areas on both sides of the river"
+    texte8 = "At the same time, we can observe that the general area of non-urbanized zones has not undergone major changes between 1982 and 2008. Thus, we can already affirm that the photogrammetric sector, which will be the basis for a large part of our work, is not characterized by strong landscape changes."
+    labels = ['1 - Vineyard Plateau',
+              '5 - Wooded Slope',
+              '12 - Wooded Alluvial Terrace',
+              '11 - Semi-Bocage Alluvial Terrace',
+              '3 - Semi-Bocage Alluvial Terrace',
+              '4 - Bocage Meadows on Alluvial Terrace',
+              '2 - Savennières Village',
+              '9 - Denée Village',
+              '6 - Road and Railway Network',
+              '7 - Loire Riverbed',
+              '10 - Sediment Deposits',
+              '8 - Loire Branch']
+
+if langue =='Portugues': 
+    propos="A propos3"
+
+markdown = t_propos
+
+st.sidebar.title(propos)
+st.sidebar.info(markdown)
+logo = "images/UNESCO.gif"
+
+
+st.sidebar.image(logo)
+opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
 
 
 
-
-st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
+st.title(titre)
 colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
                '11': '#91cd96ff', '3': '#ccedb4ff', '4': '#8ff17eff',
                '2': '#b894e3ff', '9': '#c1b1d4ff', '6': '#d5676bff',
                '7': '#90befaff', '10': '#f4eeeaff', '8': '#90eefaff','13': '#769674ff'}
 
-st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux.")
-annee = st.selectbox("Sélectionnez une année", ["1982", "2008"])
+st.markdown(texte1)
+annee = st.selectbox(sel_an, ["1982", "2008"])
 if annee == "1982":
             land_use_map = 'carte/pays_1982.geojson'
 elif annee == "2008":
@@ -108,12 +147,11 @@ with colu1:
             bouton()
             folium_static(m, width=440, height=400)
   
-st.subheader("A - Une évolution des éléments du lit de la Loire")
-st.markdown("L’un des points marquants mis en évidence par ces deux cartes concerne l’évolution de la morphologie des éléments paysagers au sein même du lit de la Loire. En effet, le caractère particulièrement changeant et imprévisible du fleuve est à l’origine de sa réputation populaire de “dernier fleuve sauvage d’Europe”. Ainsi, nous observons aisément une radicale différence entre les formes et dispositions des zones d'atterrissement sableux actuels et passés. Les mécanismes à l'origine de ces évolutions sont connus. Parmi eux, on peut entre autres citer une succession de crues violentes au cours des dernières décennies et une extraction de sable importante pendant une longue période (à l’origine d’un creusement progressif du lit du fleuve). Néanmoins, on constate que la morphologie globale de la Loire n’a pas subi d’évolution particulièrement notable sur la portion que nous étudions. Il en est de même pour un de ses bras, le Louet, également visible au sein de notre périmètre d’étude.")
-st.subheader("B - Une augmentation de la taille des zones bâties")
-st.markdown("Par ailleurs, on peut remarquer un élargissement des espaces couverts par un tissu urbanisé en une quarantaine d’années. Ce phénomène n’a bien sûr rien d’étonnant car l’augmentation démographique partout en France depuis plusieurs décennies est un élément avéré. Il se traduit ici, d’un point de vue paysager, par une densification et une augmentation des zones bâties.")
-st.subheader("C - Un phénomène de linéarisation des zones boisées en bord de Loire")
-st.markdown("De plus, l’un des éléments à noter ici (bien que moins marqué que sur d’autres zones du Val de Loire) est la linéarisation et le développement des zones boisées en bord de fleuve. Lors de cette première approche globale, ce processus d’évolution est surtout visible si l’on observe l’unité paysagère “Coteau boisé de la commune de Savennières” qui a connu une modification en quarante ans.")
-st.subheader("D - Un maintien de l’emprise générale des prairies, zones agricoles et zones boisées de part et d’autre du fleuve")
-st.markdown("Dans le même temps, on constate que la superficie générale des zones non-urbanisées n’a pas connu d’évolution majeure entre 1982 et 2008. Ainsi, nous pouvons dores et déjà affirmer que le secteur photogrammétrique sur lequel va se baser une grande partie de notre travail n’est pas caractérisé par des évolutions paysagères fortes.")
-
+st.subheader(texte1)
+st.markdown(texte2)
+st.subheader(texte3)
+st.markdown(texte4)
+st.subheader(texte5)
+st.markdown(texte6)
+st.subheader(texte7)
+st.markdown(texte8)
