@@ -5,9 +5,9 @@ from streamlit_folium import folium_static
 
 # Variable de langue
 langue = st.sidebar.selectbox('langue',["Francais", "English", "Portugues"])
-if langue ==  Francais:
+if langue ==  'Francais':
     nom_page='Projet Pluridisciplinaire'
-elif langue ==English:
+elif langue =='English':
     nom_page='Projet Pluridisciplinaire1'
 else: 
     nom_page='Projet Pluridisciplinaire2'
