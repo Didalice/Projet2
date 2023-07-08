@@ -2,18 +2,21 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
-labels=['1 - Plateau viticole',
-            '5 - Coteau boisé',
-            '12 - Terrasse alluviale boisée',
-            '11 - Terrasse alluviale agricole semi-bocagère',
-            '3 - Terrasse alluviale agricole semi-bocagère',
-            '4 - Prairies bocagères sur la terrasse alluviale',
-            '2 - Village de Savennières',
-            '9 - Village de Denée',
-            '6 - Réseau routier et ferroviaire',
-            '7 - Lit de la Loire',
-            '10 - Dépôts de sédiments',
-            '8 - Bras de la Loire']
+# Variable de langue
+langue = "fr"
+
+# Affichage du bouton de changement de langue
+if st.button("English" if langue == "fr" else "Français"):
+    langue = "en" if langue == "fr" else "fr"
+
+# Affichage du texte en fonction de la langue sélectionnée
+if langue == "fr":
+    st.write("Bonjour !")
+else:
+    st.write("Hello!")
+
+
+
 st.set_page_config(page_title="Projet Pluridisciplinaire",
     page_icon="🗺️",
 )
@@ -29,9 +32,22 @@ Site: Adèle Coatanéa
 st.sidebar.title("A propos")
 st.sidebar.info(markdown)
 logo = "images/UNESCO.gif"
+
+
 st.sidebar.image(logo)
 opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
-
+labels=['1 - Plateau viticole',
+            '5 - Coteau boisé',
+            '12 - Terrasse alluviale boisée',
+            '11 - Terrasse alluviale agricole semi-bocagère',
+            '3 - Terrasse alluviale agricole semi-bocagère',
+            '4 - Prairies bocagères sur la terrasse alluviale',
+            '2 - Village de Savennières',
+            '9 - Village de Denée',
+            '6 - Réseau routier et ferroviaire',
+            '7 - Lit de la Loire',
+            '10 - Dépôts de sédiments',
+            '8 - Bras de la Loire']
 
 
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
