@@ -45,7 +45,7 @@ colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
                '7': '#90befaff', '10': '#f4eeeaff', '8': '#90eefaff','13': '#769674ff'}
 
 st.markdown("L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux.")
-annee = st.sidebar.selectbox("Sélectionnez une année", ["1982", "2008"])
+annee = st.selectbox("Sélectionnez une année", ["1982", "2008"])
 if annee == "1982":
             land_use_map = 'carte/pays_1982.geojson'
 elif annee == "2008":
