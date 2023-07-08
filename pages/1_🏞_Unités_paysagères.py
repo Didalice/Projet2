@@ -20,6 +20,7 @@ Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam
 Site: Adèle Coatanéa
 """
 titre="L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés"
+texte0="A - Une évolution des éléments du lit de la Loire"
 texte1="L’un des premiers modes d’analyse du paysage pouvant être mis en place dans le but d’étudier l’agencement et la composition d’un secteur est l’identification d’unités paysagères. Celles-ci sont définies par le site Web de Géoconfluences comme des “portion[s] d'espace constituant un ensemble relativement homogène sur le plan de la topographie, de l'utilisation de l'espace et de la couverture végétale ou de l'occupation humaine”. Au sein de la zone du Val de Loire que nous analysons grâce aux travaux photogrammétriques, différents grands ensembles apparaissent en effet sur les photographies aériennes (tant au début des années 80 qu’à la fin des années 2000). Leur identification permet alors de caractériser notre périmètre d’étude et de mettre en évidence les changements globaux."
 sel_an="Selectionnez une année"
 texte2="L’un des points marquants mis en évidence par ces deux cartes concerne l’évolution de la morphologie des éléments paysagers au sein même du lit de la Loire. En effet, le caractère particulièrement changeant et imprévisible du fleuve est à l’origine de sa réputation populaire de “dernier fleuve sauvage d’Europe”. Ainsi, nous observons aisément une radicale différence entre les formes et dispositions des zones d'atterrissement sableux actuels et passés. Les mécanismes à l'origine de ces évolutions sont connus. Parmi eux, on peut entre autres citer une succession de crues violentes au cours des dernières décennies et une extraction de sable importante pendant une longue période (à l’origine d’un creusement progressif du lit du fleuve). Néanmoins, on constate que la morphologie globale de la Loire n’a pas subi d’évolution particulièrement notable sur la portion que nous étudions. Il en est de même pour un de ses bras, le Louet, également visible au sein de notre périmètre d’étude."
@@ -53,6 +54,7 @@ if langue =='English':
     titre = "Identifying Large Landscape Units: A Means to Globally Characterize Current and Past Landscapes"
     texte1 = "One of the first methods for analyzing a landscape and studying its arrangement and composition is to identify landscape units. According to the Géoconfluences website, these units are defined as 'portions of space that constitute a relatively homogeneous ensemble in terms of topography, land use, vegetation cover, or human occupation.' Within the Val de Loire area that we are studying using photogrammetric works, different large ensembles are visible on aerial photographs, both from the early 1980s and the late 2000s. Identifying these units allows us to characterize our study area and highlight global changes."
     sel_an = "Select a year"
+    texte0="Evolution of the elements of the Loire Riverbed"
     texte2 = "One notable point highlighted by these two maps concerns the evolution of the morphology of landscape elements within the bed of the Loire River. The particularly changing and unpredictable nature of the river has earned it the popular reputation of being the 'last wild river in Europe.' Thus, we can easily observe a radical difference between the forms and arrangements of the current and past sandy landing areas. The mechanisms behind these changes are known. Among them, we can mention a series of violent floods in recent decades and extensive sand extraction over a long period (resulting in a gradual deepening of the river bed). However, we note that the overall morphology of the Loire has not undergone any particularly notable changes in the portion we are studying. The same applies to one of its branches, the Louet, which is also visible within our study area."
     texte3 = "B - An increase in the size of built-up areas"
     texte4 = "Furthermore, we can observe an expansion of areas covered by urban fabric over a forty-year period. This phenomenon is not surprising, as population growth throughout France in recent decades is well established. From a landscape perspective, it is manifested by densification and an increase in built-up areas."
@@ -147,7 +149,7 @@ with colu1:
             bouton()
             folium_static(m, width=440, height=400)
   
-st.subheader(texte1)
+st.subheader(texte0)
 st.markdown(texte2)
 st.subheader(texte3)
 st.markdown(texte4)
