@@ -2,20 +2,6 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
-# Variable de langue
-langue = "fr"
-
-# Affichage du bouton de changement de langue
-if st.button("English" if langue == "fr" else "Français"):
-    langue = "en" if langue == "fr" else "fr"
-
-# Affichage du texte en fonction de la langue sélectionnée
-if langue == "fr":
-    st.write("Bonjour !")
-else:
-    st.write("Hello!")
-
-
 
 st.set_page_config(page_title="Projet Pluridisciplinaire",
     page_icon="🗺️",
@@ -49,7 +35,18 @@ labels=['1 - Plateau viticole',
             '10 - Dépôts de sédiments',
             '8 - Bras de la Loire']
 
+# Variable de langue
+langue = "fr"
 
+# Affichage du bouton de changement de langue
+if st.button("English" if langue == "fr" else "Français"):
+    langue = "en" if langue == "fr" else "fr"
+
+# Affichage du texte en fonction de la langue sélectionnée
+if langue == "fr":
+    st.write("Bonjour !")
+else:
+    st.write("Hello!")
 st.title("L’identification de grandes unités paysagères; un moyen de caractériser globalement les paysages actuels et passés")
 colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
                '11': '#91cd96ff', '3': '#ccedb4ff', '4': '#8ff17eff',
