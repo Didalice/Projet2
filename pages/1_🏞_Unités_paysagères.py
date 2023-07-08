@@ -4,9 +4,14 @@ import folium
 from streamlit_folium import folium_static
 
 # Variable de langue
-langue = st.sidebar.selectbox('',["Francais", "English", "Portugues"])
-
-st.set_page_config(page_title="Projet Pluridisciplinaire",
+langue = st.sidebar.selectbox('langue',["Francais", "English", "Portugues"])
+if langue ==  Francais:
+    nom_page='Projet Pluridisciplinaire'
+elif langue ==English:
+    nom_page='Projet Pluridisciplinaire1'
+else: 
+    nom_page='Projet Pluridisciplinaire2'
+st.set_page_config(page_title=nom_page,
     page_icon="🗺️",
 )
 
