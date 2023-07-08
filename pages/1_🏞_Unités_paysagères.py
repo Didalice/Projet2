@@ -132,8 +132,6 @@ st.markdown(texte1)
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
 co1, co2, co3, co4 = st.columns(4)
-col1, col2, col3, col4 = st.columns(4)
-
 
 for i, label in enumerate(labels):
     column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
