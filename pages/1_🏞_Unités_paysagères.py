@@ -127,7 +127,14 @@ colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
                '7': '#90befaff', '10': '#f4eeeaff', '8': '#90eefaff','13': '#769674ff'}
 
 st.markdown(texte1)
+
+
+
 annee = st.selectbox(sel_an, ["1982", "2008"])
+show_vine = st.checkbox("Vineyard Plateau")
+if show_vine:
+    opp_dict['1']=0.7
+
 if annee == "1982":
             land_use_map = 'carte/pays_1982.geojson'
 elif annee == "2008":
@@ -135,8 +142,7 @@ elif annee == "2008":
 def opacite(feature):
             chaine=str(feature['properties'].values())
             cle=str(chaine.split('[')[1].split(']')[0])
-            #return opp_dict[cle]
-            return 0.7
+            return opp_dict[cle]
 def colors(feature):
     chaine=str(feature['properties'].values())
     cle=str(chaine.split('[')[1].split(']')[0])
