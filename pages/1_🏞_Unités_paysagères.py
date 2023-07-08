@@ -5,13 +5,13 @@ from streamlit_folium import folium_static
 
 # Variable de langue
 langue = st.sidebar.selectbox('langue',["Francais", "English", "Portugues"])
-if langue ==  'Francais':
-    nom_page='Projet Pluridisciplinaire'
-elif langue =='English':
-    nom_page='Projet Pluridisciplinaire1'
-else: 
-    nom_page='Projet Pluridisciplinaire2'
-st.set_page_config(page_title=nom_page,
+
+propos="A propos"
+if langue =='English':
+    propos="A propos2"
+if langue =='Portugues: 
+    propos="A propos3"
+st.set_page_config(page_title='Projet Pluridisciplinaire',
     page_icon="🗺️",
 )
 
@@ -23,7 +23,7 @@ Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam
 Site: Adèle Coatanéa
 """
 
-st.sidebar.title("A propos")
+st.sidebar.title(propos)
 st.sidebar.info(markdown)
 logo = "images/UNESCO.gif"
 
