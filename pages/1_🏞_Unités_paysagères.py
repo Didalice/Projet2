@@ -11,6 +11,7 @@ if langue =='English':
     propos="A propos2"
 if langue =='Portugues': 
     propos="A propos3"
+
 st.set_page_config(page_title='Projet Pluridisciplinaire',
     page_icon="🗺️",
 )
