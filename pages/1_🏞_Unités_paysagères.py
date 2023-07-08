@@ -9,7 +9,7 @@ st.set_page_config(page_title='Projet Pluridisciplinaire',
     page_icon="🗺️",
 )
 
-langue = st.sidebar.selectbox('langue',["Francais", "English", "Portugues"])
+langue = st.sidebar.selectbox(' ',["Francais", "English", "Portugues"])
 
 propos="A propos"
 t_propos="""
