@@ -131,10 +131,14 @@ st.markdown(texte1)
 
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
-for label in labels:
-    checkbox_label = st.checkbox(label.split(' - ')[1])
-    if checkbox_label:
+co1, co2, co3, co4 = st.columns(4)
+
+for i, label in enumerate(labels):
+    column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
+    show_label = column.checkbox(label.split(' - ')[1])
+    if show_label:
         opp_dict[label.split(' - ')[0]] = 0.7
+
 
 
 if annee == "1982":
