@@ -131,8 +131,8 @@ st.markdown(texte1)
 
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
-show_vine = st.checkbox("Vineyard Plateau")
-if show_vine:
+show_vine = st.checkbox(labels[0].split(' - ')[1])
+if show_vigne:
     opp_dict['1']=0.7
 
 if annee == "1982":
