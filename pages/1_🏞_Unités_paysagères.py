@@ -3,9 +3,20 @@ import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
 
+
+
 st.set_page_config(page_title='Projet Pluridisciplinaire',
     page_icon="🗺️",
 )
+
+# Variable de langue
+langue = st.sidebar.selectbox('langue',["Francais", "English", "Portugues"])
+
+propos="A propos"
+if langue =='English':
+    propos="A propos2"
+if langue =='Portugues': 
+    propos="A propos3"
 
 markdown = """
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
