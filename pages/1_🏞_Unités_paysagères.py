@@ -132,7 +132,7 @@ st.markdown(texte1)
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
 for label in labels:
-    checkbox_label = st.checkbox(label.split(' - ')[1], key=label)
+    checkbox_label = st.checkbox(label.split(' - ')[1])
     if checkbox_label:
         opp_dict[label.split(' - ')[0]] = 0.7
 
