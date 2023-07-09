@@ -17,7 +17,7 @@ Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam
 
 Site: Adèle Coatanéa"""
 titre="Une modification de l’occupation des sols depuis 40 ans témoin de changements morphologiques"
-texte1="L’étude plus précise de la répartition de l’occupation des sols d’un espace est également un moyen de mettre en évidence certaines évolutions. Après avoir abordé ces dernières avec une vision générale dans la partie précédente, nous allons à présent utiliser des données chiffrées et plus précises pour renforcer nos observations. Pour réaliser les cartes et diagrammes relatifs à l’occupation des sols de notre secteur d’étude, nous avons utilisé les photographies de 1982 et 2008 à notre disposition. Nous avons également adopté la nomenclature de niveau 3 de la base de données Corine Land Cover pour représenter et nommer les différents types d’espace."
+texte1="Les données cartographiques précédentes peuvent être traduites en données statistiques pour faciliter la visualisation des évolutions entre les deux périodes. Ainsi, en calculant les pourcentages de chaque type d’occupation au sein de la zone commune, on peut obtenir les diagrammes suivants.
 texte2="L’étude plus précise de la répartition de l’occupation des sols d’un espace est également un moyen de mettre en évidence certaines évolutions. Après avoir abordé ces dernières avec une vision générale dans la partie précédente, nous allons à présent utiliser des données chiffrées et plus précises pour renforcer nos observations. Pour réaliser les cartes et diagrammes relatifs à l’occupation des sols de notre secteur d’étude, nous avons utilisé les photographies de 1982 et 2008 à notre disposition. Nous avons également adopté la nomenclature de niveau 3 de la base de données Corine Land Cover pour représenter et nommer les différents types d’espace."
 texte3="A - Une diminution de la superficie des prairies au profit des espaces cultivés"
 texte4="Grâce à l’analyse des unités paysagères, nous avons pu constater que l’espace non-urbanisé de notre périmètre n’a pas connu d’évolution notable au cours des quarante années séparant les prises de vue aériennes. Pour autant, l’analyse des diagrammes précédents met en évidence une diminution de la surface des prairies (de 27,7% à 20,3%) et, parallèlement, une augmentation de la taille des systèmes culturaux (de 20.2% à 27,1%). Ainsi, nous comprenons que la surface de l’espace initialement réservé aux pâturages a progressivement diminué en étant convertie en espace cultivé. Comme nous le détaillerons plus précisément dans la partie III de cette section, certains mécanismes sont directement à l’origine de ces modifications."
@@ -28,6 +28,45 @@ texte8="Le périmètre d’analyse est aussi caractérisé par la présence de v
 
 labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers, ferroviaires et espaces ass.', '221 - Vignobles', '231 - Prairies et autres surf. en herbe à usage agri.', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
 
+if langue == 'Portugues':
+  propos = "Sobre"
+  t_propos = """[Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+  
+  Realizado por: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+  
+  Site: Adèle Coatanéa"""
+  titre = "Uma modificação na ocupação do solo nos últimos 40 anos reflete mudanças morfológicas"
+  texte1 = "O estudo mais preciso da distribuição da ocupação do solo de um espaço também é uma maneira de destacar certas evoluções. Depois de abordar essas últimas com uma visão geral na parte anterior, agora vamos usar dados numéricos mais precisos para reforçar nossas observações. Para criar mapas e diagramas relacionados à ocupação do solo de nossa área de estudo, utilizamos as fotografias de 1982 e 2008 disponíveis para nós. Também adotamos a nomenclatura de nível 3 da base de dados Corine Land Cover para representar e nomear os diferentes tipos de espaço."
+  texte2 = "Os dados cartográficos anteriores podem ser traduzidos em dados estatísticos para facilitar a visualização das mudanças entre os dois períodos. Assim, ao calcular as porcentagens de cada tipo de uso da terra dentro da área comum, é possível obter os seguintes diagramas."
+  texte3 = "A - Uma diminuição da área de pastagens em favor de áreas cultivadas"
+  texte4 = "Por meio da análise das unidades paisagísticas, constatamos que a área não urbanizada de nosso perímetro não sofreu mudanças significativas ao longo dos quarenta anos que separam as imagens aéreas. No entanto, a análise dos diagramas anteriores revela uma diminuição na superfície das pastagens (de 27,7% para 20,3%) e, ao mesmo tempo, um aumento no tamanho dos sistemas culturais (de 20,2% para 27,1%). Assim, compreendemos que a área originalmente reservada para pastagens diminuiu gradualmente, sendo convertida em áreas cultivadas. Como detalharemos mais precisamente na Parte III desta seção, certos mecanismos são diretamente responsáveis por essas mudanças."
+  texte5 = "B - Uma estabilização da proporção de áreas florestadas marcada pelo desenvolvimento de folhosas nas margens do rio"
+  texte6 = "Além disso, é particularmente interessante observar um aumento significativo nas florestas de folhosas entre 1982 e 2008 (de 7,4% para 13,2%). Essa observação confirma as dinâmicas de evolução das matas ciliares (formações florestais presentes nas margens de um curso d'água) mencionadas na parte anterior. De fato, observa-se uma expansão e densificação das áreas florestadas, apesar do aumento paralelo das áreas cultivadas. A evolução progressiva dessas áreas explica o fato de a soma das porcentagens de 'florestas de folhosas' (que indicam uma vegetação densa) e de 'florestas e vegetação' (que indicam uma vegetação menos imponente) permanecer relativamente estável ao longo do tempo (de 18% para 17% em quarenta anos)."
+  texte7 = "C - Um desenvolvimento das áreas de vinhas"
+  texte8 = "A área de análise também é caracterizada pela presença de vinhas localizadas no topo do morro. Através do estudo dos dados de ocupação do solo, observamos um aumento e valorização dessas áreas ao longo do tempo. Como mencionaremos na Seção II, a presença de uma AOC em nosso território é a causa desse fato."
+  
+  labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', '511 - Cursos e vias d'água']
+
+if langue =='English':
+    propos = "About"
+    t_propos = """
+    [Interdisciplinary Project](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+    
+    Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+    
+    Website: Adèle Coatanéa
+    """
+    titre = "Changes in Land Use Over 40 Years as Evidence of Morphological Transformations"
+    texte1 = "A more precise study of land use distribution in an area is also a means of highlighting certain evolutions. After addressing these with a general overview in the previous section, we will now use numerical data to reinforce our observations. To create maps and diagrams related to land use in our study area, we used the available photographs from 1982 and 2008. We also adopted the level 3 nomenclature of the Corine Land Cover database to represent and name different types of areas."
+    texte2 = "The previous cartographic data can be translated into statistical data to facilitate the visualization of changes between the two periods. Thus, by calculating the percentages of each type of land use within the common area, the following diagrams can be obtained."
+    texte3 = "A - Decrease in the area of meadows in favor of cultivated spaces"
+    texte4 = "Through the analysis of landscape units, we observed that the non-urbanized space within our perimeter did not undergo significant changes over the forty-year period between aerial photographs. However, the analysis of the previous diagrams reveals a decrease in the surface area of meadows (from 27.7% to 20.3%) and, simultaneously, an increase in the size of agricultural systems (from 20.2% to 27.1%). Thus, we understand that the area initially reserved for pastures has gradually diminished and been converted into cultivated space. As we will detail more precisely in Part III of this section, certain mechanisms are directly responsible for these modifications."
+    texte5 = "B - Stabilization of the proportion of wooded areas marked by the development of deciduous trees along the riverbank"
+    texte6 = "Moreover, it is particularly interesting to note a significant increase in deciduous forests between 1982 and 2008 (from 7.4% to 13.2%). This observation confirms the dynamics of riparian forests (wooded formations along the riverbanks) mentioned in the previous section. Despite the parallel increase in cultivated space, there is indeed an expansion and densification of wooded areas. The gradual evolution of these areas explains why the sum of the percentages of 'deciduous forests' (indicating dense vegetation) and 'forests and vegetation' (indicating less imposing vegetation) remains relatively stable over time (from 18% to 17% over forty years)."
+    texte7 = "C - Development of vineyard areas"
+    texte8 = "The analysis perimeter is also characterized by the presence of vineyards located on the upper slopes. Through the study of land use data, we can observe an increase and valorization of these areas over time. As we will discuss in Section II, the presence of an Appellation of Origin Control (AOC) in our territory is the reason behind this finding."
+
+    labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road networks, railways, and associated land', '221 - Vineyards', '231 - Grassland and other areas used for agriculture', '242 - Complex cultivation patterns and parcels', '311 - Deciduous forests', '324 - Forests and transitional woodland', '331 - Beaches, dunes, and sand', '511 - Water courses and waterways']
 
 st.sidebar.title(propos)
 st.sidebar.info(t_propos)
@@ -48,6 +87,14 @@ def colors(feature):
     elif clc_niv3 in colors_dict:
         return colors_dict[clc_niv3]
 
+colors_dict = {'111': 0, '112': 0, '122': 0, '221': 0, 
+               '231': 0, '242': 0, '311': 0, '324': 0, 
+               '331': 0, '511': 0}
+def opacite(feature):
+            chaine=str(feature['properties'].values())
+            cle=str(chaine.split('[')[1].split(']')[0])
+            return opp_dict[cle]
+  
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
@@ -73,20 +120,24 @@ with colu2:
                     <span style="font-size: 10px;">{label}</span>
                 </div>''', unsafe_allow_html=True)
 with colu1:
-  if col1.button("Carte occupation du sol 1982"):
-    land_use_map='carte/occ_1982.geojson'
-    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
-    bouton()
-    folium_static(m, width=440, height=400)
-  if col1.button("Carte occupation du sol 2008"):
-    land_use_map='carte/occ_2008.geojson'
-    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
-    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':0.7, 'weight':0},tooltip=tooltip).add_to(m)
-    bouton()
-    folium_static(m, width=440, height=400)
+  annee = st.selectbox(sel_an, ["1982", "2008"])
+  for i, label in enumerate(labels):
+    column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
+    show_label = column.checkbox(label.split(' - ')[1])
+    if show_label:
+        opp_dict[label.split(' - ')[0]] = 0.7
+  if annee == "1982":
+    land_use_map = 'carte/occ_1982.geojson'
+  elif annee == "2008":
+    land_use_map = 'carte/occ_2008.geojson'
+
+
+  m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
+  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
+  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
+  bouton()
+  folium_static(m, width=440, height=400)
+ 
 
 
 st.markdown(texte2)
