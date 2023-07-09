@@ -121,6 +121,7 @@ def bouton():
   folium.Marker([47.3855089,-0.6449059], popup='<b>Route et train</b><br><img src=vigne style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3855089,-0.6449059,3a,75y,257.94h,85.47t/data=!3m6!1e1!3m4!1sA5qNG_T2NEffmnxay7QElQ!2e0!7i16384!8i8192">Google street view</a> ', tooltip=tooltips,icon = folium.Icon(icon='star', color = 'black')).add_to(m)
 
 colu1, colu2 = st.columns([5, 3])
+"""
 with colu2:
   color = [colors_dict[label.split()[0]] for label in labels]
   st.subheader('Legende :')
@@ -133,8 +134,7 @@ with colu1:
   bouton()
   folium_static(m, width=440, height=400)
  
-
-
+"""
 st.markdown(texte2)
 st.subheader(texte3)
 st.markdown(texte4)
