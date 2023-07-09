@@ -100,12 +100,7 @@ opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0,
 def opacite(feature):
   clc_niv3 = str(feature['properties']['clc_niv3'])
   opp_dict[clc_niv3]
-  
-  """
-            chaine=str(feature['properties'].values())
-            cle=str(chaine.split('[')[1].split(']')[0])
-            return opp_dict[cle]
-  """
+
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
