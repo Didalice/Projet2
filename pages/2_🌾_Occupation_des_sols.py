@@ -89,22 +89,23 @@ elif annee == "2008":
 
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
-               '331': '#f7efc7', '511': '#7ce1de'}
+               '331': '#f7efc7', '511': '#7ce1de','24':'#e5b636'}
 def colors(feature):
-    clc_niv3 = str(feature['properties']['clc_niv3'])
-    if clc_niv3 == '24':
-        return '#e5b636'
-    elif clc_niv3 in colors_dict:
-        return colors_dict[clc_niv3]
+  clc_niv3 = str(feature['properties']['clc_niv3'])
+  colors_dict[clc_niv3]
 
 opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0, 
                '231': 0, '242': 0, '311': 0, '324': 0, 
                '331': 0, '511': 0}
 def opacite(feature):
+  clc_niv3 = str(feature['properties']['clc_niv3'])
+  opp_dict[clc_niv3]
+  
+  """
             chaine=str(feature['properties'].values())
             cle=str(chaine.split('[')[1].split(']')[0])
             return opp_dict[cle]
-  
+  """
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
