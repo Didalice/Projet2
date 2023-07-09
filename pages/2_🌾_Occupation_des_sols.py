@@ -122,13 +122,10 @@ def bouton():
 
 colu1, colu2 = st.columns([5, 3])
 with colu2:
-    color = [colors_dict[label.split()[0]] for label in labels]
-    st.subheader('Legende :')
-    for i, label in enumerate(labels):
-         st.markdown(f'''<div style="display: flex; align-items: center;">
-                    <div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div>
-                    <span style="font-size: 10px;">{label}</span>
-                </div>''', unsafe_allow_html=True)
+  color = [colors_dict[label.split()[0]] for label in labels]
+  st.subheader('Legende :')
+  for i, label in enumerate(labels):
+    st.markdown(f'''<div style="display: flex; align-items: center;"><div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div><span style="font-size: 10px;">{label}</span></div>''', unsafe_allow_html=True)
 with colu1:
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
