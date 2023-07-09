@@ -1,7 +1,8 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import pandas as pd
-
+st.set_page_config(page_title="Projet Pluridisciplinaire",page_icon="🗺️",)
+#Config langue
 langue = st.sidebar.selectbox(' ',["Francais", "English", "Portugues"])
 
 #texte francais
@@ -77,10 +78,7 @@ if langue == 'Portugues':
 
 
 def main():
-    st.set_page_config(page_title="Projet Pluridisciplinaire",page_icon="🗺️",)
-    #Config langue
-    langue = st.sidebar.selectbox(' ',["Francais", "English", "Portugues"])
-    
+
     st.sidebar.title(propos)
     st.sidebar.info(t_propos)
     logo = "images/UNESCO.gif"
