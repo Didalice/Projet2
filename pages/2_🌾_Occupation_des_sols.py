@@ -16,6 +16,7 @@ t_propos="""[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcb
 Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
 
 Site: Adèle Coatanéa"""
+sel_an="Selectionnez une année"
 titre="Une modification de l’occupation des sols depuis 40 ans témoin de changements morphologiques"
 texte1="Les données cartographiques précédentes peuvent être traduites en données statistiques pour faciliter la visualisation des évolutions entre les deux périodes. Ainsi, en calculant les pourcentages de chaque type d’occupation au sein de la zone commune, on peut obtenir les diagrammes suivants."
 texte2="L’étude plus précise de la répartition de l’occupation des sols d’un espace est également un moyen de mettre en évidence certaines évolutions. Après avoir abordé ces dernières avec une vision générale dans la partie précédente, nous allons à présent utiliser des données chiffrées et plus précises pour renforcer nos observations. Pour réaliser les cartes et diagrammes relatifs à l’occupation des sols de notre secteur d’étude, nous avons utilisé les photographies de 1982 et 2008 à notre disposition. Nous avons également adopté la nomenclature de niveau 3 de la base de données Corine Land Cover pour représenter et nommer les différents types d’espace."
@@ -44,29 +45,27 @@ if langue == 'Portugues':
   texte6 = "Além disso, é particularmente interessante observar um aumento significativo nas florestas de folhosas entre 1982 e 2008 (de 7,4% para 13,2%). Essa observação confirma as dinâmicas de evolução das matas ciliares (formações florestais presentes nas margens de um curso d'água) mencionadas na parte anterior. De fato, observa-se uma expansão e densificação das áreas florestadas, apesar do aumento paralelo das áreas cultivadas. A evolução progressiva dessas áreas explica o fato de a soma das porcentagens de 'florestas de folhosas' (que indicam uma vegetação densa) e de 'florestas e vegetação' (que indicam uma vegetação menos imponente) permanecer relativamente estável ao longo do tempo (de 18% para 17% em quarenta anos)."
   texte7 = "C - Um desenvolvimento das áreas de vinhas"
   texte8 = "A área de análise também é caracterizada pela presença de vinhas localizadas no topo do morro. Através do estudo dos dados de ocupação do solo, observamos um aumento e valorização dessas áreas ao longo do tempo. Como mencionaremos na Seção II, a presença de uma AOC em nosso território é a causa desse fato."
-  
+  sel_an = "Selecione um ano"
   labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', "511 - Cursos e vias d'água"]
 
 if langue =='English':
-    propos = "About"
-    t_propos = """
-    [Interdisciplinary Project](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
-    
-    Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
-    
-    Website: Adèle Coatanéa
-    """
-    titre = "Changes in Land Use Over 40 Years as Evidence of Morphological Transformations"
-    texte1 = "A more precise study of land use distribution in an area is also a means of highlighting certain evolutions. After addressing these with a general overview in the previous section, we will now use numerical data to reinforce our observations. To create maps and diagrams related to land use in our study area, we used the available photographs from 1982 and 2008. We also adopted the level 3 nomenclature of the Corine Land Cover database to represent and name different types of areas."
-    texte2 = "The previous cartographic data can be translated into statistical data to facilitate the visualization of changes between the two periods. Thus, by calculating the percentages of each type of land use within the common area, the following diagrams can be obtained."
-    texte3 = "A - Decrease in the area of meadows in favor of cultivated spaces"
-    texte4 = "Through the analysis of landscape units, we observed that the non-urbanized space within our perimeter did not undergo significant changes over the forty-year period between aerial photographs. However, the analysis of the previous diagrams reveals a decrease in the surface area of meadows (from 27.7% to 20.3%) and, simultaneously, an increase in the size of agricultural systems (from 20.2% to 27.1%). Thus, we understand that the area initially reserved for pastures has gradually diminished and been converted into cultivated space. As we will detail more precisely in Part III of this section, certain mechanisms are directly responsible for these modifications."
-    texte5 = "B - Stabilization of the proportion of wooded areas marked by the development of deciduous trees along the riverbank"
-    texte6 = "Moreover, it is particularly interesting to note a significant increase in deciduous forests between 1982 and 2008 (from 7.4% to 13.2%). This observation confirms the dynamics of riparian forests (wooded formations along the riverbanks) mentioned in the previous section. Despite the parallel increase in cultivated space, there is indeed an expansion and densification of wooded areas. The gradual evolution of these areas explains why the sum of the percentages of 'deciduous forests' (indicating dense vegetation) and 'forests and vegetation' (indicating less imposing vegetation) remains relatively stable over time (from 18% to 17% over forty years)."
-    texte7 = "C - Development of vineyard areas"
-    texte8 = "The analysis perimeter is also characterized by the presence of vineyards located on the upper slopes. Through the study of land use data, we can observe an increase and valorization of these areas over time. As we will discuss in Section II, the presence of an Appellation of Origin Control (AOC) in our territory is the reason behind this finding."
-
-    labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road networks, railways, and associated land', '221 - Vineyards', '231 - Grassland and other areas used for agriculture', '242 - Complex cultivation patterns and parcels', '311 - Deciduous forests', '324 - Forests and transitional woodland', '331 - Beaches, dunes, and sand', '511 - Water courses and waterways']
+  propos = "About"
+  t_propos = """[Interdisciplinary Project](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+  
+  Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+  
+  Website: Adèle Coatanéa"""
+  titre = "Changes in Land Use Over 40 Years as Evidence of Morphological Transformations"
+  texte1 = "A more precise study of land use distribution in an area is also a means of highlighting certain evolutions. After addressing these with a general overview in the previous section, we will now use numerical data to reinforce our observations. To create maps and diagrams related to land use in our study area, we used the available photographs from 1982 and 2008. We also adopted the level 3 nomenclature of the Corine Land Cover database to represent and name different types of areas."
+  texte2 = "The previous cartographic data can be translated into statistical data to facilitate the visualization of changes between the two periods. Thus, by calculating the percentages of each type of land use within the common area, the following diagrams can be obtained."
+  texte3 = "A - Decrease in the area of meadows in favor of cultivated spaces"
+  texte4 = "Through the analysis of landscape units, we observed that the non-urbanized space within our perimeter did not undergo significant changes over the forty-year period between aerial photographs. However, the analysis of the previous diagrams reveals a decrease in the surface area of meadows (from 27.7% to 20.3%) and, simultaneously, an increase in the size of agricultural systems (from 20.2% to 27.1%). Thus, we understand that the area initially reserved for pastures has gradually diminished and been converted into cultivated space. As we will detail more precisely in Part III of this section, certain mechanisms are directly responsible for these modifications."
+  texte5 = "B - Stabilization of the proportion of wooded areas marked by the development of deciduous trees along the riverbank"
+  texte6 = "Moreover, it is particularly interesting to note a significant increase in deciduous forests between 1982 and 2008 (from 7.4% to 13.2%). This observation confirms the dynamics of riparian forests (wooded formations along the riverbanks) mentioned in the previous section. Despite the parallel increase in cultivated space, there is indeed an expansion and densification of wooded areas. The gradual evolution of these areas explains why the sum of the percentages of 'deciduous forests' (indicating dense vegetation) and 'forests and vegetation' (indicating less imposing vegetation) remains relatively stable over time (from 18% to 17% over forty years)."
+  texte7 = "C - Development of vineyard areas"
+  texte8 = "The analysis perimeter is also characterized by the presence of vineyards located on the upper slopes. Through the study of land use data, we can observe an increase and valorization of these areas over time. As we will discuss in Section II, the presence of an Appellation of Origin Control (AOC) in our territory is the reason behind this finding."
+  sel_an = "Select a year"
+  labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road networks, railways, and associated land', '221 - Vineyards', '231 - Grassland and other areas used for agriculture', '242 - Complex cultivation patterns and parcels', '311 - Deciduous forests', '324 - Forests and transitional woodland', '331 - Beaches, dunes, and sand', '511 - Water courses and waterways']
 
 st.sidebar.title(propos)
 st.sidebar.info(t_propos)
@@ -76,6 +75,7 @@ st.sidebar.image(logo)
 st.title(titre)
 st.markdown(texte1)
 
+annee = st.selectbox(sel_an, ["1982", "2008"])
 
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
