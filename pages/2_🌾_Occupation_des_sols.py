@@ -45,7 +45,7 @@ if langue == 'Portugues':
   texte7 = "C - Um desenvolvimento das áreas de vinhas"
   texte8 = "A área de análise também é caracterizada pela presença de vinhas localizadas no topo do morro. Através do estudo dos dados de ocupação do solo, observamos um aumento e valorização dessas áreas ao longo do tempo. Como mencionaremos na Seção II, a presença de uma AOC em nosso território é a causa desse fato."
   
-  labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', '511 - Cursos e vias d'água']
+  labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', "511 - Cursos e vias d'água"]
 
 if langue =='English':
     propos = "About"
