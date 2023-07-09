@@ -2,7 +2,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import pandas as pd
 
-
+langue = st.sidebar.selectbox(' ',["Francais", "English", "Portugues"])
 
 #texte francais
 propos="A propos"
