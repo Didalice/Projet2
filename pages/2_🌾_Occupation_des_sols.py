@@ -76,6 +76,16 @@ st.title(titre)
 st.markdown(texte1)
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
+co1, co2, co3, co4 = st.columns(4)
+for i, label in enumerate(labels):
+  column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
+  show_label = column.checkbox(label.split(' - ')[1])
+  if show_label:
+    opp_dict[label.split(' - ')[0]] = 0.7
+if annee == "1982":
+  land_use_map = 'carte/occ_1982.geojson'
+elif annee == "2008":
+  land_use_map = 'carte/occ_2008.geojson'
 
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
@@ -120,18 +130,6 @@ with colu2:
                     <span style="font-size: 10px;">{label}</span>
                 </div>''', unsafe_allow_html=True)
 with colu1:
-  co1, co2, co3, co4 = st.columns(4)
-  for i, label in enumerate(labels):
-    column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
-    show_label = column.checkbox(label.split(' - ')[1])
-    if show_label:
-        opp_dict[label.split(' - ')[0]] = 0.7
-  if annee == "1982":
-    land_use_map = 'carte/occ_1982.geojson'
-  elif annee == "2008":
-    land_use_map = 'carte/occ_2008.geojson'
-
-
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
   folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
