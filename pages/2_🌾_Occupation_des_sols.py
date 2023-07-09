@@ -120,6 +120,7 @@ with colu2:
                     <span style="font-size: 10px;">{label}</span>
                 </div>''', unsafe_allow_html=True)
 with colu1:
+  co1, co2, co3, co4 = st.columns(4)
   for i, label in enumerate(labels):
     column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
     show_label = column.checkbox(label.split(' - ')[1])
