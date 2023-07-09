@@ -9,8 +9,11 @@ st.set_page_config(page_title='Projet Pluridisciplinaire',
     page_icon="🗺️",
 )
 
+
+#Change de langue
 langue = st.sidebar.selectbox(' ',["Francais", "English", "Portugues"])
 
+#texte en diff langue
 propos="A propos"
 t_propos="""
 [Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -108,51 +111,46 @@ if langue == 'Portugues':
             '10 - Depósitos de sedimentos',
             '8 - Braço do Loire']
 
-markdown = t_propos
 
 st.sidebar.title(propos)
-st.sidebar.info(markdown)
+st.sidebar.info(t_propos)
 logo = "images/UNESCO.gif"
-
-
 st.sidebar.image(logo)
-opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
-
-
-
 st.title(titre)
-colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
-               '11': '#91cd96ff', '3': '#ccedb4ff', '4': '#8ff17eff',
-               '2': '#b894e3ff', '9': '#c1b1d4ff', '6': '#d5676bff',
-               '7': '#90befaff', '10': '#f4eeeaff', '8': '#90eefaff','13': '#769674ff'}
-
 st.markdown(texte1)
 
 
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
 co1, co2, co3, co4 = st.columns(4)
-
 for i, label in enumerate(labels):
     column = co1 if i < len(labels)//4 else (co2 if i < 2*(len(labels)//4) else (co3 if i < 3*(len(labels)//4) else co4))
     show_label = column.checkbox(label.split(' - ')[1])
     if show_label:
         opp_dict[label.split(' - ')[0]] = 0.7
-
-
-
 if annee == "1982":
             land_use_map = 'carte/pays_1982.geojson'
 elif annee == "2008":
             land_use_map = 'carte/pays_2008.geojson'
+
+
+opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
 def opacite(feature):
             chaine=str(feature['properties'].values())
             cle=str(chaine.split('[')[1].split(']')[0])
             return opp_dict[cle]
+
+
+colors_dict = {'1': '#ffb266ff', '5': '#769674ff', '12': '#9cf5a2ff',
+               '11': '#91cd96ff', '3': '#ccedb4ff', '4': '#8ff17eff',
+               '2': '#b894e3ff', '9': '#c1b1d4ff', '6': '#d5676bff',
+               '7': '#90befaff', '10': '#f4eeeaff', '8': '#90eefaff','13': '#769674ff'}
 def colors(feature):
     chaine=str(feature['properties'].values())
     cle=str(chaine.split('[')[1].split(']')[0])
     return colors_dict[cle]
+
+
 def bouton(): 
     loire ='images/loire.png'
     tooltips = 'Clique aqui!'
@@ -171,10 +169,10 @@ def bouton():
     folium.Marker([47.3912095,-0.6347417], popup='<b>Champ</b><br><img src=foret style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3912095,-0.6347417,3a,75y,67.05h,96.76t/data=!3m8!1e1!3m6!1sAF1QipOueBHS2GcuLtj5NO-v6rf48nTr5Nz7kif1Df0V!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOueBHS2GcuLtj5NO-v6rf48nTr5Nz7kif1Df0V%3Dw203-h100-k-no-pi-0-ya9.331403-ro-0-fo100!7i8704!8i4352">Google street view</a> ', tooltip=tooltips,icon = folium.Icon(icon='star', color = 'green')).add_to(m)
     route = 'images/routetrain.jpg'
     folium.Marker([47.3855089,-0.6449059], popup='<b>Route et train</b><br><img src=route style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3855089,-0.6449059,3a,75y,257.94h,85.47t/data=!3m6!1e1!3m4!1sA5qNG_T2NEffmnxay7QElQ!2e0!7i16384!8i8192">Google street view</a> ', tooltip=tooltips,icon = folium.Icon(icon='star', color = 'black')).add_to(m)
-col1, col2, col3 = st.columns(3)
+
+
 
 colu1, colu2 = st.columns([5, 3])
-
 with colu2:
     color = [colors_dict[label.split()[0]] for label in labels]
     st.subheader('Legende :')
