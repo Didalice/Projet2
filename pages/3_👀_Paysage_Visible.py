@@ -105,6 +105,10 @@ elif annee == "2008":
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
 folium.Marker(location=[47.391153, -0.626613],icon='images/cer.png').add_to(m)
+icon_url = 'images/cer.png'
+icon = folium.features.CustomIcon(icon_url, icon_size=(30, 30))
+folium.Marker(location=[47.391153, -0.626613], icon=icon).add_to(m)
+
 bouton()
 folium_static(m)
 st.subheader(legende)
