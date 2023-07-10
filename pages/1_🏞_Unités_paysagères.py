@@ -132,7 +132,7 @@ st.title(titre)
 st.markdown(texte1)
 
 
-
+opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
 annee = st.selectbox(sel_an, ["1982", "2008"])
 co1, co2, co3, co4 = st.columns(4)
 for i, label in enumerate(labels):
@@ -146,7 +146,6 @@ elif annee == "2008":
             land_use_map = 'carte/pays_2008.geojson'
 
 
-opp_dict = {'1': 0, '5': 0, '12': 0,'11': 0, '3': 0, '4': 0,'2': 0, '9': 0, '6': 0,'7': 0, '10': 0, '8': 0,'13': 0}
 def opacite(feature):
             chaine=str(feature['properties'].values())
             cle=str(chaine.split('[')[1].split(']')[0])
