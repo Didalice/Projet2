@@ -45,6 +45,10 @@ labels=['1 - Plateau viticole',
             '7 - Lit de la Loire',
             '10 - Dépôts de sédiments',
             '8 - Bras de la Loire']
+legende='Legende :'
+texte_unite='Unité paysagère : '
+source="Sources: Sur base de deux photographies aériennes, IGN (1982)"
+
 if langue =='English':
     propos = "About"
     t_propos = """
@@ -77,8 +81,14 @@ if langue =='English':
               '7 - Loire Riverbed',
               '10 - Sediment Deposits',
               '8 - Loire Branch']
+    legende = 'Legend:'
+    texte_unite = 'Landscape unit: '
+    source = 'Sources: Based on two aerial photographs, IGN (1982)'
+
 
 if langue == 'Portugues':
+    texte_unite = 'Unidade paisagística: '
+    legende = 'Legenda:'
     propos = "Sobre"
     t_propos = """
     [Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -110,6 +120,8 @@ if langue == 'Portugues':
             '7 - Leito do Loire',
             '10 - Depósitos de sedimentos',
             '8 - Braço do Loire']
+    source = 'Fontes: Com base em duas fotografias aéreas, IGN (1982)'
+
 
 
 st.sidebar.title(propos)
@@ -175,7 +187,7 @@ def bouton():
 colu1, colu2 = st.columns([5, 3])
 with colu2:
     color = [colors_dict[label.split()[0]] for label in labels]
-    st.subheader('Legende :')
+    st.subheader(Legende)
     for i, label in enumerate(labels):
          st.markdown(f'''<div style="display: flex; align-items: center;">
                     <div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div>
@@ -184,11 +196,12 @@ with colu2:
 
 with colu1:
             m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-            tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
+            tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=texte_unite)
             folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
             bouton()
             folium_static(m, width=440, height=400)
-  
+
+st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source}</span>''', unsafe_allow_html=True)  
 st.subheader(texte0)
 st.markdown(texte2)
 st.subheader(texte3)
