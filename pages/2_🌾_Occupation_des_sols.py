@@ -79,9 +79,10 @@ st.title(titre)
 st.markdown(texte1)
 
 annee = st.selectbox(sel_an, ["1982", "2008"])
-co1, co2, co3, co4 = st.columns(4)
+co1, co2, co3, co4, co5 = st.columns(5)
 for i, label in enumerate(labels):
-  column = co1 if i < len(label)//4 else (co2 if i < 2*(len(label)//4) else (co3 if i < 3*(len(label)//4) else co4))
+  print(i)
+  column = co1 
   show_label = column.checkbox(label.split(' - ')[1])
   if show_label:
     opp_dict[label.split(' - ')[0]] = 0.7
