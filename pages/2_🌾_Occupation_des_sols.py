@@ -27,7 +27,8 @@ texte6="Par ailleurs, il est particulièrement intéressant de constater une aug
 texte7="C - Un développement des surfaces viticoles"
 texte8="Le périmètre d’analyse est aussi caractérisé par la présence de vignes localisées en haut de coteau. Grâce à l’étude des données d’occupation du sol, on remarque une augmentation et une valorisation de ces espaces au cours du temps. Comme nous l’évoquerons en section II, la présence d’une AOC sur notre territoire est à l’origine de ce constat."
 
-labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers, ferroviaires et espaces ass.', '221 - Vignobles', '231 - Prairies et autres surf. en herbe à usage agri.', '242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
+labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers, ferroviaires et espaces ass.', '221 - Vignobles', '231 - Prairies et autres surf. en herbe à usage agri.',
+          242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
 opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0, '231': 0, '242': 0, '311': 0, '324': 0,'331': 0, '511': 0}
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
@@ -49,7 +50,8 @@ if langue == 'Portugues':
   texte7 = "C - Um desenvolvimento das áreas de vinhas"
   texte8 = "A área de análise também é caracterizada pela presença de vinhas localizadas no topo do morro. Através do estudo dos dados de ocupação do solo, observamos um aumento e valorização dessas áreas ao longo do tempo. Como mencionaremos na Seção II, a presença de uma AOC em nosso território é a causa desse fato."
   sel_an = "Selecione um ano"
-  labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', "511 - Cursos e vias d'água"]
+  labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', 
+            '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', "511 - Cursos e vias d'água"]
 
 if langue =='English':
   propos = "About"
@@ -81,8 +83,16 @@ st.markdown(texte1)
 annee = st.selectbox(sel_an, ["1982", "2008"])
 co1, co2, co3, co4, co5 = st.columns(5)
 for i, label in enumerate(labels):
-  print(i)
-  column = co1 
+  if i in [0,5]:
+    column = co1
+  if i in [1,6]:
+    column=co2
+  if i in [2,7]:
+    column=co3
+  if i in [3,8]:
+    column=co4
+  if i in [4,9]:
+    column=co5
   show_label = column.checkbox(label.split(' - ')[1])
   if show_label:
     opp_dict[label.split(' - ')[0]] = 0.7
