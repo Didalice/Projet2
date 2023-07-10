@@ -195,7 +195,7 @@ with colu2:
 
 with colu1:
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=texte_unite)
+    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=[texte_unite])
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=440, height=400)
