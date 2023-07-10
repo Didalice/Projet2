@@ -32,6 +32,14 @@ if langue == 'Portugues':
   Realizado por: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
   
   Site: Adèle Coatanéa"""
+  titre = "Diversos mecanismos por trás dessas evoluções"
+  texte1 = "Agora vamos discutir os principais mecanismos por trás das evoluções morfológicas observadas. Isso envolve destacar os sistemas agrícolas escolhidos e os modos de reflexão em relação à questão da paisagem ao longo das décadas."
+  texte2 = "Mapa paisagens visíveis 1982"
+  texte3 = "Mapa paisagens visíveis 2008"
+  texte4 = "A - O impacto da unificação da agricultura ao longo do tempo"
+  texte5 = "Os modos de prática agrícola têm evoluído ao longo de vários séculos. Nos últimos cinquenta anos, a mecanização progressiva da agricultura tem levado a um aumento no número e no tamanho dos campos cultivados em toda a França. Nosso setor não é exceção a essa regra, embora as mudanças morfológicas resultantes sejam relativamente limitadas. Observa-se, de fato, um aumento no tamanho das diferentes áreas agrícolas, especialmente na área ao sul do Loire."
+  texte6 = "B - Uma diminuição da visibilidade paisagística induzida pelo desenvolvimento de áreas arborizadas"
+  texte7 = "Além disso, a evolução da morfologia das paisagens tem um impacto direto na percepção do território nas proximidades dos cursos de água. Como evidenciado pelo cone de visibilidade a seguir, o desenvolvimento das matas ciliares tem o efeito de limitar consideravelmente a vista da paisagem (consulte também o Anexo nº 3). Assim, surge naturalmente uma questão: devemos tomar medidas para limitar o desenvolvimento dessas áreas arborizadas ou, pelo contrário, incentivar essa evolução?"
 
 if langue =='English':
   propos = "About"
@@ -40,6 +48,14 @@ if langue =='English':
   Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
   
   Website: Adèle Coatanéa"""
+  titre = "Various mechanisms behind these evolutions"
+  texte1 = "We will now discuss the major mechanisms behind the observed morphological evolutions. This involves highlighting the chosen agrarian systems as well as the modes of thinking regarding the landscape question over the decades."
+  texte2 = "Visible landscapes map 1982"
+  texte3 = "Visible landscapes map 2008"
+  texte4 = "A - The impact of agricultural unification over time"
+  texte5 = "Agricultural practices have evolved over several centuries. In the last fifty years, the progressive mechanization of agriculture has led to an increase in the number and size of cultivated fields throughout France. Our region is no exception, although the induced morphological changes remain relatively limited. There is indeed an increase in the size of various agricultural plots, particularly in the southern zone of the Loire."
+  texte6 = "B - A decrease in landscape visibility caused by the development of wooded areas"
+  texte7 = "Furthermore, the evolution of landscape morphology has a direct impact on the perception of the territory along riverbanks. As demonstrated by the visibility cone below, the development of riparian forests significantly limits the view of the landscape (see also Annex 3). Thus, a natural question arises: should actions be taken to limit the expansion of these wooded areas, or should this evolution be encouraged?"
 
 
 st.sidebar.title(propos)
