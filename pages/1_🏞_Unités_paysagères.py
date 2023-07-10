@@ -195,11 +195,11 @@ with colu2:
                 </div>''', unsafe_allow_html=True)
 
 with colu1:
-            m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-            tooltip = folium.GeoJsonTooltip(fields=['Unité'])
-            folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
-            bouton()
-            folium_static(m, width=440, height=400)
+    m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
+    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
+    folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
+    bouton()
+    folium_static(m, width=440, height=400)
 
 st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source}</span>''', unsafe_allow_html=True)  
 st.subheader(texte0)
