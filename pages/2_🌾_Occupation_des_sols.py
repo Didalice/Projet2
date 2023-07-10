@@ -97,7 +97,8 @@ def colors(feature):
 opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0, '231': 0, '242': 0, '311': 0, '324': 0,'331': 0, '511': 0}
 def opacite(feature):
   clc_niv3 = str(feature['properties']['clc_niv3'])
-  return opp_dict[clc_niv3]
+  if clc_niv3 in opp_dict:
+    return opp_dict[clc_niv3]
 
 def bouton(): 
   loire ='images/loire.png'
