@@ -102,7 +102,6 @@ elif annee == "2008":
   land_use_map = 'carte/pays_visibles_2008.geojson'
 
 
-st.subheader(legende)
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
 bouton()
