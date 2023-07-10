@@ -31,7 +31,7 @@ labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - 
 opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0, '231': 0, '242': 0, '311': 0, '324': 0,'331': 0, '511': 0}
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
-               '331': '#f7efc7', '511': '#7ce1de','24':'#e5b636'}
+               '331': '#f7efc7', '511': '#7ce1de'}
 if langue == 'Portugues':
   propos = "Sobre"
   t_propos = """[Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -103,11 +103,19 @@ elif annee == "2008":
 
 def colors(feature):
   clc_niv3 = str(feature['properties']['clc_niv3'])
+  if clc_niv3=='24':
+    return colors_dict['324']
+  if clc_niv3=='24':
+    return colors_dict['241']
   if clc_niv3 in opp_dict:
     return colors_dict[clc_niv3]
 
 def opacite(feature):
   clc_niv3 = str(feature['properties']['clc_niv3'])
+  if clc_niv3=='24':
+    return opp_dict['324']
+  if clc_niv3=='24':
+    return opp_dict['241']
   if clc_niv3 in opp_dict:
     return opp_dict[clc_niv3]
 
