@@ -105,7 +105,7 @@ elif annee == "2008":
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
 bouton()
-folium.Marker([-0.626613,47.391153],popup='Homem de Ferro no poli',icon=circle).add_to(m)
+folium.CircleMarker(location=[47.391153, -0.626613],radius=10,color='black',fill_color='black').add_to(m)
 m
 folium_static(m)
 st.subheader(legende)
