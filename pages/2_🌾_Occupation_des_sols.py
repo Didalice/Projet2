@@ -105,8 +105,8 @@ def colors(feature):
   clc_niv3 = str(feature['properties']['clc_niv3'])
   if clc_niv3=='24':
     return colors_dict['324']
-  if clc_niv3=='24':
-    return colors_dict['241']
+  if clc_niv3=='241':
+    return colors_dict['242']
   if clc_niv3 in opp_dict:
     return colors_dict[clc_niv3]
 
@@ -114,8 +114,8 @@ def opacite(feature):
   clc_niv3 = str(feature['properties']['clc_niv3'])
   if clc_niv3=='24':
     return opp_dict['324']
-  if clc_niv3=='24':
-    return opp_dict['241']
+  if clc_niv3=='241':
+    return opp_dict['242']
   if clc_niv3 in opp_dict:
     return opp_dict[clc_niv3]
 
