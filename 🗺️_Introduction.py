@@ -104,7 +104,7 @@ def main():
     if col1.button(texte4):
         image_1 = "images/Bloc-diagramme_1983.png"
         st.image(image_1, caption="Image 1", use_column_width=True)
-    st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source1}</span>''', unsafe_allow_html=True)
+        st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source1}</span>''', unsafe_allow_html=True)
     if col2.button(texte5):
         image_2 = "images/Bloc-diagramme_2008.png"
         st.image(image_2, caption="Image 2", use_column_width=True)
