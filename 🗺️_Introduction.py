@@ -80,8 +80,8 @@ if langue == 'Portugues':
         ["Bouchemaine", " 49080 /49035", "Comunidade Urbana Angers Loire Métropole"],
         ["Denée", "49190 / 49120", "Comunidade de Comunas Loire Layon et Aubance"]
     ]
-    source1_pt = "Fontes: fotografias aéreas, IGN (2008) e BRGM"
-    source2_pt = "Fontes: fotografias aéreas, IGN (2008) e mapa topográfico do IGN"
+    source1 = "Fontes: fotografias aéreas, IGN (2008) e BRGM"
+    source2 = "Fontes: fotografias aéreas, IGN (2008) e mapa topográfico do IGN"
 
 
 
