@@ -3,23 +3,54 @@ import leafmap.foliumap as leafmap
 import folium
 from streamlit_folium import folium_static
 
+st.set_page_config(page_title='Projet Pluridisciplinaire',page_icon="🗺️",)
 
+#Change de langue
+langue = st.sidebar.selectbox(' ',["Francais", "English", "Portugues"])
 
-markdown = """
-[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+#texte en diff langue
+propos="A propos"
+t_propos="""[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
 
 Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
 
-Site: Adèle Coatanéa
-"""
+Site: Adèle Coatanéa"""
+titre="Divers mécanismes à l’origine de ces évolutions"
+texte1="Nous allons maintenant évoquer les grands mécanismes à l’origine des évolutions morphologiques observées. Cela revient à mettre en évidence les systèmes agraires choisis ainsi que les modes de réflexion quant à la question paysagère au cours des décennies."
+texte2="Carte paysages visibles 1982"
+texte3="Carte paysages visibles 2008"
+texte4="A - L’impact d’une unification de l’agriculture au cours du temps"
+texte5="Les modes de pratique agricole ont évolué depuis plusieurs siècles. Durant les cinquante dernières années, la mécanisation progressive de l’agriculture a induit une augmentation du nombre et de la taille des champs cultivés partout en France. Notre secteur n’échappe pas à la règle même si les changements morphologiques induits restent relativement limités. On remarque en effet une augmentation de la taille des différentes parcelles agricoles tout particulièrement sur la zone au sud de la Loire."
+texte6="B - Une diminution de la visibilité paysagère induite par le développement des zones boisées"
+texte7="Par ailleurs, l’évolution de la morphologie des paysages a un impact direct sur la perception du territoire aux abords des cours d’eau. Comme le met en évidence le cône de visibilité ci-après, le développement des ripisylves a pour effet de limiter considérablement la vue sur le paysage (voir aussi Annexe n°3). Ainsi, une question se pose naturellement ; faut-il engager des actions visant à limiter le développement de ces zones boisées ou au contraire encourager cette évolution ?"
 
-st.sidebar.title("A propos")
-st.sidebar.info(markdown)
+
+if langue == 'Portugues':
+  propos = "Sobre"
+  t_propos = """[Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+  
+  Realizado por: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+  
+  Site: Adèle Coatanéa"""
+
+if langue =='English':
+  propos = "About"
+  t_propos = """[Interdisciplinary Project](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
+  
+  Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
+  
+  Website: Adèle Coatanéa"""
+
+
+st.sidebar.title(propos)
+st.sidebar.info(t_propos)
 logo = "images/UNESCO.gif"
 st.sidebar.image(logo)
 
-st.title("Divers mécanismes à l’origine de ces évolutions")
-st.markdown("Nous allons maintenant évoquer les grands mécanismes à l’origine des évolutions morphologiques observées. Cela revient à mettre en évidence les systèmes agraires choisis ainsi que les modes de réflexion quant à la question paysagère au cours des décennies.")
+st.title(titre)
+st.markdown(texte1)
+
+
 def bouton(): 
   loire ='images/loire.png'
   tooltips = 'Clique aqui!'
@@ -37,7 +68,7 @@ def bouton():
   
 col1, col2, col3 = st.columns(3)
 
-if col1.button("Carte paysages visibles 1982"):
+if col1.button(texte2):
   land_use_map='carte/pays_visibles_1982.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
@@ -45,15 +76,14 @@ if col1.button("Carte paysages visibles 1982"):
   folium_static(m)
 
 
-if col1.button("Carte paysages visibles 2008"):
+if col1.button(texte3):
   land_use_map='carte/pays_visibles_2008.geojson'
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
   folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
   bouton()
   folium_static(m)
 
-st.subheader("A - L’impact d’une unification de l’agriculture au cours du temps")
-st.markdown("Les modes de pratique agricole ont évolué depuis plusieurs siècles. Durant les cinquante dernières années, la mécanisation progressive de l’agriculture a induit une augmentation du nombre et de la taille des champs cultivés partout en France. Notre secteur n’échappe pas à la règle même si les changements morphologiques induits restent relativement limités. On remarque en effet une augmentation de la taille des différentes parcelles agricoles tout particulièrement sur la zone au sud de la Loire.")
-st.subheader("B - Une diminution de la visibilité paysagère induite par le développement des zones boisées")
-st.markdown("Par ailleurs, l’évolution de la morphologie des paysages a un impact direct sur la perception du territoire aux abords des cours d’eau. Comme le met en évidence le cône de visibilité ci-après, le développement des ripisylves a pour effet de limiter considérablement la vue sur le paysage (voir aussi Annexe n°3). Ainsi, une question se pose naturellement ; faut-il engager des actions visant à limiter le développement de ces zones boisées ou au contraire encourager cette évolution ?")
-
+st.subheader(texte4)
+st.markdown(texte5)
+st.subheader(texte6)
+st.markdown(texte7)
