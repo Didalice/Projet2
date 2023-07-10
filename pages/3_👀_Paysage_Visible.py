@@ -105,9 +105,7 @@ elif annee == "2008":
 
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
-
 bouton()
-
 folium_static(m)
 st.subheader(legende)
 st.markdown(f'''<div style="display: flex; align-items: center;">
