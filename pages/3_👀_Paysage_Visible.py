@@ -15,16 +15,21 @@ t_propos="""[Projet Pluridisciplinaire](https://drive.google.com/file/d/1AAZHmcb
 Réalisé par : Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
 
 Site: Adèle Coatanéa"""
+sel_an="Selectionnez une année"
 titre="Divers mécanismes à l’origine de ces évolutions"
 texte1="Nous allons maintenant évoquer les grands mécanismes à l’origine des évolutions morphologiques observées. Cela revient à mettre en évidence les systèmes agraires choisis ainsi que les modes de réflexion quant à la question paysagère au cours des décennies."
 texte2="Carte paysages visibles 1982"
 texte3="Carte paysages visibles 2008"
-texte4="A - L’impact d’une unification de l’agriculture au cours du temps"
+texte4="
+
+A - L’impact d’une unification de l’agriculture au cours du temps"
 texte5="Les modes de pratique agricole ont évolué depuis plusieurs siècles. Durant les cinquante dernières années, la mécanisation progressive de l’agriculture a induit une augmentation du nombre et de la taille des champs cultivés partout en France. Notre secteur n’échappe pas à la règle même si les changements morphologiques induits restent relativement limités. On remarque en effet une augmentation de la taille des différentes parcelles agricoles tout particulièrement sur la zone au sud de la Loire."
 texte6="B - Une diminution de la visibilité paysagère induite par le développement des zones boisées"
 texte7="Par ailleurs, l’évolution de la morphologie des paysages a un impact direct sur la perception du territoire aux abords des cours d’eau. Comme le met en évidence le cône de visibilité ci-après, le développement des ripisylves a pour effet de limiter considérablement la vue sur le paysage (voir aussi Annexe n°3). Ainsi, une question se pose naturellement ; faut-il engager des actions visant à limiter le développement de ces zones boisées ou au contraire encourager cette évolution ?"
-
-
+texte_circle='Point de vue'
+texte_zone='Zone de visibilité'
+legende='Legende :'
+source="Sources: Sur base de deux photographies aériennes, IGN (1982) Utilisation de la carte d'unités paysagères de 1982"
 if langue == 'Portugues':
   propos = "Sobre"
   t_propos = """[Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -32,14 +37,21 @@ if langue == 'Portugues':
   Realizado por: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
   
   Site: Adèle Coatanéa"""
+  sel_an = "Selecione um ano"
   titre = "Diversos mecanismos por trás dessas evoluções"
   texte1 = "Agora vamos discutir os principais mecanismos por trás das evoluções morfológicas observadas. Isso envolve destacar os sistemas agrícolas escolhidos e os modos de reflexão em relação à questão da paisagem ao longo das décadas."
   texte2 = "Mapa paisagens visíveis 1982"
   texte3 = "Mapa paisagens visíveis 2008"
-  texte4 = "A - O impacto da unificação da agricultura ao longo do tempo"
+  texte4 = "
+  
+  A - O impacto da unificação da agricultura ao longo do tempo"
   texte5 = "Os modos de prática agrícola têm evoluído ao longo de vários séculos. Nos últimos cinquenta anos, a mecanização progressiva da agricultura tem levado a um aumento no número e no tamanho dos campos cultivados em toda a França. Nosso setor não é exceção a essa regra, embora as mudanças morfológicas resultantes sejam relativamente limitadas. Observa-se, de fato, um aumento no tamanho das diferentes áreas agrícolas, especialmente na área ao sul do Loire."
   texte6 = "B - Uma diminuição da visibilidade paisagística induzida pelo desenvolvimento de áreas arborizadas"
   texte7 = "Além disso, a evolução da morfologia das paisagens tem um impacto direto na percepção do território nas proximidades dos cursos de água. Como evidenciado pelo cone de visibilidade a seguir, o desenvolvimento das matas ciliares tem o efeito de limitar consideravelmente a vista da paisagem (consulte também o Anexo nº 3). Assim, surge naturalmente uma questão: devemos tomar medidas para limitar o desenvolvimento dessas áreas arborizadas ou, pelo contrário, incentivar essa evolução?"
+  texte_circle = 'Ponto de vista'
+  texte_zone = 'Zona de visibilidade'
+  legende = 'Legenda:'
+  source = 'Fontes: Com base em duas fotografias aéreas, IGN (1982) Uso do mapa de unidades paisagísticas de 1982'
 
 if langue =='English':
   propos = "About"
@@ -48,6 +60,7 @@ if langue =='English':
   Realized by: Adèle Coatanéa, Quentin Boivin, Amine Bastaoui, Isabella Wokam, Eliot Bertthié, Danielle Babi
   
   Website: Adèle Coatanéa"""
+  sel_an = "Select a year"
   titre = "Various mechanisms behind these evolutions"
   texte1 = "We will now discuss the major mechanisms behind the observed morphological evolutions. This involves highlighting the chosen agrarian systems as well as the modes of thinking regarding the landscape question over the decades."
   texte2 = "Visible landscapes map 1982"
@@ -56,6 +69,10 @@ if langue =='English':
   texte5 = "Agricultural practices have evolved over several centuries. In the last fifty years, the progressive mechanization of agriculture has led to an increase in the number and size of cultivated fields throughout France. Our region is no exception, although the induced morphological changes remain relatively limited. There is indeed an increase in the size of various agricultural plots, particularly in the southern zone of the Loire."
   texte6 = "B - A decrease in landscape visibility caused by the development of wooded areas"
   texte7 = "Furthermore, the evolution of landscape morphology has a direct impact on the perception of the territory along riverbanks. As demonstrated by the visibility cone below, the development of riparian forests significantly limits the view of the landscape (see also Annex 3). Thus, a natural question arises: should actions be taken to limit the expansion of these wooded areas, or should this evolution be encouraged?"
+  texte_circle = 'Point of view'
+  texte_zone = 'Visibility zone'
+  legende = 'Legend:'
+  source = 'Sources: Based on two aerial photographs, IGN (1982) Use of the 1982 landscape unit map'
 
 
 st.sidebar.title(propos)
@@ -82,22 +99,29 @@ def bouton():
   route = 'images/routetrain.jpg'
   folium.Marker([47.3855089,-0.6449059], popup='<b>Route et train</b><br><img src=vigne style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3855089,-0.6449059,3a,75y,257.94h,85.47t/data=!3m6!1e1!3m4!1sA5qNG_T2NEffmnxay7QElQ!2e0!7i16384!8i8192">Google street view</a> ', tooltip=tooltips,icon = folium.Icon(icon='star', color = 'black')).add_to(m)
   
-col1, col2, col3 = st.columns(3)
+annee = st.selectbox(sel_an, ["1982", "2008"])
 
-if col1.button(texte2):
-  land_use_map='carte/pays_visibles_1982.geojson'
-  m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
-  bouton()
-  folium_static(m)
+if annee == "1982":
+  land_use_map = 'carte/pays_visibles_1982.geojson'
+elif annee == "2008":
+  land_use_map = 'carte/pays_visibles_2008.geojson'
+m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
+tooltip = folium.GeoJsonTooltip(texte_zone)
+folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
+bouton()
+folium_static(m)
+color = [colors_dict[label.split()[0]] for label in labels]
+st.subheader(legende)
+st.markdown(f'''<div style="display: flex; align-items: center;">
+                    <div style="background-color: red; width: 20px; height: 10px; margin-right: 10px;"></div>
+                    <span style="font-size: 10px;">{texte_zone}</span>
+                </div>''', unsafe_allow_html=True)
 
-
-if col1.button(texte3):
-  land_use_map='carte/pays_visibles_2008.geojson'
-  m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-  folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
-  bouton()
-  folium_static(m)
+st.markdown(f'''<div style="display: flex; align-items: center;">
+                    <div style="background-color: black; border-radius: 50%; width: 10px; height: 10px; margin-right: 10px;"></div>
+                    <span style="font-size: 10px;">{texte_circle}</span>
+                </div>''', unsafe_allow_html=True)
+st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source}</span>''', unsafe_allow_html=True)
 
 st.subheader(texte4)
 st.markdown(texte5)
