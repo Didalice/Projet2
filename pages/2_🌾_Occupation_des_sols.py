@@ -32,6 +32,7 @@ opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0, '231': 0, '242': 0, '311': 0
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
                '331': '#f7efc7', '511': '#7ce1de'}
+legende='Legende :'
 if langue == 'Portugues':
   propos = "Sobre"
   t_propos = """[Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -49,6 +50,7 @@ if langue == 'Portugues':
   texte7 = "C - Um desenvolvimento das áreas de vinhas"
   texte8 = "A área de análise também é caracterizada pela presença de vinhas localizadas no topo do morro. Através do estudo dos dados de ocupação do solo, observamos um aumento e valorização dessas áreas ao longo do tempo. Como mencionaremos na Seção II, a presença de uma AOC em nosso território é a causa desse fato."
   sel_an = "Selecione um ano"
+  legende = 'Legenda:'
   labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', 
             '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', "511 - Cursos e vias d'água"]
 
@@ -70,6 +72,7 @@ if langue =='English':
   texte8 = "The analysis perimeter is also characterized by the presence of vineyards located on the upper slopes. Through the study of land use data, we can observe an increase and valorization of these areas over time. As we will discuss in Section II, the presence of an Appellation of Origin Control (AOC) in our territory is the reason behind this finding."
   sel_an = "Select a year"
   labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road networks, railways, and associated land', '221 - Vineyards', '231 - Grassland and other areas used for agriculture', '242 - Complex cultivation patterns and parcels', '311 - Deciduous forests', '324 - Forests and transitional woodland', '331 - Beaches, dunes, and sand', '511 - Water courses and waterways']
+  legende = 'Legend:'
 
 st.sidebar.title(propos)
 st.sidebar.info(t_propos)
@@ -138,7 +141,7 @@ colu1, colu2 = st.columns([5, 3])
 
 with colu2:
   color = [colors_dict[label.split()[0]] for label in labels]
-  st.subheader('Legende :')
+  st.subheader(legende)
   for i, label in enumerate(labels):
     st.markdown(f'''<div style="display: flex; align-items: center;"><div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div><span style="font-size: 10px;">{label}</span></div>''', unsafe_allow_html=True)
 with colu1:
