@@ -152,7 +152,7 @@ with colu2:
     st.markdown(f'''<div style="display: flex; align-items: center;"><div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div><span style="font-size: 10px;">{label}</span></div>''', unsafe_allow_html=True)
 with colu1:
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=aliases=texte_unite)
+  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=texte_unite)
   folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
   folium_static(m, width=440, height=400)
