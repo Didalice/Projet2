@@ -104,7 +104,6 @@ elif annee == "2008":
 
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
-#folium.CircleMarker(location=[47.391153, -0.626613],radius=10,color='black',fill=True,fill_color='black').add_to(m)
 folium.Marker([47.3855089,-0.6449059], tooltip=tooltips,icon = folium.Icon(color = 'black')).add_to(m)
 
 bouton()
