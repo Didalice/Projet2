@@ -187,7 +187,7 @@ def bouton():
 colu1, colu2 = st.columns([5, 3])
 with colu2:
     color = [colors_dict[label.split()[0]] for label in labels]
-    st.subheader('legende')
+    st.subheader(legende)
     for i, label in enumerate(labels):
          st.markdown(f'''<div style="display: flex; align-items: center;">
                     <div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div>
