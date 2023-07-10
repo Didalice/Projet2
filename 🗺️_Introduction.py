@@ -21,6 +21,8 @@ texte3="Notons pour débuter que la zone étudiée grâce aux [travaux photogram
 texte4="Bloc diagramme de 1983"
 texte5="Bloc diagramme de 2008"
 texte6="Coupe paysagère en 2008"
+source1="Sources: photographies aériennes, IGN (2008) et BRGM"
+source2="Sources photographies aériennes, IGN (2008) et carte topographique IGN"
 data = [
     ["Commune", "Code Postal et Code Commune", "EPCI principal"],
     ["Béhuard", "49170 / 49028", "Communauté Urbaine Angers Loire Métropole"],
@@ -51,6 +53,9 @@ if langue =='English':
         ["Bouchemaine", "49080 / 49035", "Angers Loire Métropole Urban Community"],
         ["Denée", "49190 / 49120", "Loire Layon et Aubance Community of Communes"]
     ]
+    source1 = "Sources: aerial photographs, IGN (2008) and BRGM"
+    source2 = "Sources: aerial photographs, IGN (2008) and IGN topographic map"
+
 
 if langue == 'Portugues':
     propos = "Sobre"
@@ -75,6 +80,9 @@ if langue == 'Portugues':
         ["Bouchemaine", " 49080 /49035", "Comunidade Urbana Angers Loire Métropole"],
         ["Denée", "49190 / 49120", "Comunidade de Comunas Loire Layon et Aubance"]
     ]
+    source1_pt = "Fontes: fotografias aéreas, IGN (2008) e BRGM"
+    source2_pt = "Fontes: fotografias aéreas, IGN (2008) e mapa topográfico do IGN"
+
 
 
 def main():
@@ -95,13 +103,18 @@ def main():
     col1, col2, col3 = st.columns(3)
     if col1.button(texte4):
         image_1 = "images/Bloc-diagramme_1983.png"
-        st.image(image_1, caption="Image 1", use_column_width=True)        
+        st.image(image_1, caption="Image 1", use_column_width=True)
+    st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source1}</span>''', unsafe_allow_html=True)
     if col2.button(texte5):
         image_2 = "images/Bloc-diagramme_2008.png"
-        st.image(image_2, caption="Image 2", use_column_width=True)        
+        st.image(image_2, caption="Image 2", use_column_width=True)
+        st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source1}</span>''', unsafe_allow_html=True)
+
     if col3.button(texte6):
         image_2 = "images/COUPE.png"  
         st.image(image_2, caption="Image 2", use_column_width=True)
+        st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source2}</span>''', unsafe_allow_html=True)
+
 
 if __name__ == "__main__":
     main()
