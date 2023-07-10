@@ -47,7 +47,7 @@ labels=['1 - Plateau viticole',
             '8 - Bras de la Loire']
 legende='Legende :'
 texte_unite='Unité paysagère : '
-source="Sources: Sur base de deux photographies aériennes, IGN (1982)"
+source="Sources: Sur base de deux photographies aériennes, IGN"
 
 if langue =='English':
     propos = "About"
@@ -83,7 +83,7 @@ if langue =='English':
               '8 - Loire Branch']
     legende = 'Legend:'
     texte_unite = 'Landscape unit: '
-    source = 'Sources: Based on two aerial photographs, IGN (1982)'
+    source = 'Sources: Based on two aerial photographs, IGN'
 
 
 if langue == 'Portugues':
@@ -120,7 +120,7 @@ if langue == 'Portugues':
             '7 - Leito do Loire',
             '10 - Depósitos de sedimentos',
             '8 - Braço do Loire']
-    source = 'Fontes: Com base em duas fotografias aéreas, IGN (1982)'
+    source = 'Fontes: Com base em duas fotografias aéreas, IGN'
 
 
 
@@ -195,7 +195,7 @@ with colu2:
 
 with colu1:
     m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=['Land Use Class'])
+    tooltip = folium.GeoJsonTooltip(fields=['Unité'], aliases=texte_unite)
     folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
     bouton()
     folium_static(m, width=440, height=400)
