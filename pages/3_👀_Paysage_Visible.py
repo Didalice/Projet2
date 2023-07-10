@@ -96,12 +96,12 @@ def bouton():
   folium.Marker([47.3855089,-0.6449059], popup='<b>Route et train</b><br><img src=vigne style="width:128px;height:128px;"><br><a href="https://www.google.com/maps/@47.3855089,-0.6449059,3a,75y,257.94h,85.47t/data=!3m6!1e1!3m4!1sA5qNG_T2NEffmnxay7QElQ!2e0!7i16384!8i8192">Google street view</a> ', tooltip=tooltips,icon = folium.Icon(icon='star', color = 'black')).add_to(m)
   
 annee = st.selectbox(sel_an, ["1982", "2008"])
-
 if annee == "1982":
   land_use_map = 'carte/pays_visibles_1982.geojson'
 elif annee == "2008":
   land_use_map = 'carte/pays_visibles_2008.geojson'
 
+st.subheader(legende)
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
 bouton()
