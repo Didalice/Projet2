@@ -27,8 +27,7 @@ texte6="Par ailleurs, il est particulièrement intéressant de constater une aug
 texte7="C - Un développement des surfaces viticoles"
 texte8="Le périmètre d’analyse est aussi caractérisé par la présence de vignes localisées en haut de coteau. Grâce à l’étude des données d’occupation du sol, on remarque une augmentation et une valorisation de ces espaces au cours du temps. Comme nous l’évoquerons en section II, la présence d’une AOC sur notre territoire est à l’origine de ce constat."
 
-labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers, ferroviaires et espaces ass.', '221 - Vignobles', '231 - Prairies et autres surf. en herbe à usage agri.',
-          242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
+labels = ['111 - Tissu urbain continu', '112 - Tissu urbain discontinu', '122 - Réseaux routiers, ferroviaires et espaces ass.', '221 - Vignobles', '231 - Prairies et autres surf. en herbe à usage agri.','242 - Systèmes culturaux et parcellaires complexes', '311 - Forêts de feuillus', '324 - Forêt et végétation arbustive en mutation', '331 - Plages, dunes et sable', '511 - Cours et voies d\'eau']
 opp_dict = {'111': 0, '112': 0, '122': 0, '221': 0, '231': 0, '242': 0, '311': 0, '324': 0,'331': 0, '511': 0}
 colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d3fa0', 
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
