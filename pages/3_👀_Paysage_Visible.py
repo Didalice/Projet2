@@ -107,7 +107,6 @@ folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: 
 bouton()
 folium.CircleMarker(location=[47.391153, -0.626613],radius=10,color='black',fill_color='black').add_to(m)
 m
-folium_static(m)
 st.subheader(legende)
 st.markdown(f'''<div style="display: flex; align-items: center;">
                     <div style="background-color: red; width: 20px; height: 10px; margin-right: 10px;"></div>
