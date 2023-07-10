@@ -33,6 +33,8 @@ colors_dict = {'111': '#ff0145', '112': '#9b3f0a', '122': '#393076', '221': '#9d
                '231': '#b2df8a', '242': '#e5d411', '311': '#88ff00', '324': '#33a02c', 
                '331': '#f7efc7', '511': '#7ce1de'}
 legende='Legende :'
+texte_unite='Ocuppation des sols : '
+source="Sources: Sur base de deux photographies aériennes, IGN Nomenclature Corine Land Cover de niveau 3"
 if langue == 'Portugues':
   propos = "Sobre"
   t_propos = """[Projeto Multidisciplinar](https://drive.google.com/file/d/1AAZHmcbd7jpFdqhTs5pqXbZqaX4RELUS/view?usp=sharing)
@@ -53,6 +55,8 @@ if langue == 'Portugues':
   legende = 'Legenda:'
   labels = ['111 - Tecido urbano contínuo', '112 - Tecido urbano descontínuo', '122 - Redes viárias, ferroviárias e espaços associados', '221 - Vinhas', '231 - Pastagens e outras áreas herbáceas para uso agrícola', 
             '242 - Sistemas culturais e parcelares complexos', '311 - Florestas de folhosas', '324 - Floresta e vegetação arbustiva em mutação', '331 - Praias, dunas e areia', "511 - Cursos e vias d'água"]
+  texte_unite = 'Uso do Solo: '
+  source = "Fontes: Com base em duas fotografias aéreas, IGN Nomenclatura Corine Land Cover de nível 3"
 
 if langue =='English':
   propos = "About"
@@ -73,6 +77,8 @@ if langue =='English':
   sel_an = "Select a year"
   labels = ['111 - Continuous urban fabric', '112 - Discontinuous urban fabric', '122 - Road networks, railways, and associated land', '221 - Vineyards', '231 - Grassland and other areas used for agriculture', '242 - Complex cultivation patterns and parcels', '311 - Deciduous forests', '324 - Forests and transitional woodland', '331 - Beaches, dunes, and sand', '511 - Water courses and waterways']
   legende = 'Legend:'
+  texte_unite = "Land Use: "
+  source ="Sources: Based on two aerial photographs, IGN Corine Land Cover Level 3 Nomenclature"
 
 st.sidebar.title(propos)
 st.sidebar.info(t_propos)
@@ -146,11 +152,12 @@ with colu2:
     st.markdown(f'''<div style="display: flex; align-items: center;"><div style="background-color: {color[i]}; width: 20px; height: 10px; margin-right: 10px;"></div><span style="font-size: 10px;">{label}</span></div>''', unsafe_allow_html=True)
 with colu1:
   m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=['Land Use Class'])
+  tooltip = folium.GeoJsonTooltip(fields=['clc_niv3'], aliases=aliases=texte_unite)
   folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':colors(feature),'fillOpacity':opacite(feature), 'weight':0},tooltip=tooltip).add_to(m)
   bouton()
   folium_static(m, width=440, height=400)
  
+st.markdown(f'''<span style="font-size: 10px; font-style: italic;">{source}</span>''', unsafe_allow_html=True)  
 
 st.markdown(texte2)
 st.subheader(texte3)
