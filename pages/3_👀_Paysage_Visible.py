@@ -102,7 +102,6 @@ if annee == "1982":
 elif annee == "2008":
   land_use_map = 'carte/pays_visibles_2008.geojson'
 m=folium.Map(location=[47.389468, -0.633296], zoom_start=14)
-#tooltip = folium.GeoJsonTooltip(text=texte_zone)
 folium.GeoJson(land_use_map,name='land use map',style_function= lambda feature: {'fillColor':'#e6004dff','fillOpacity':1, 'weight':0}).add_to(m)
 bouton()
 folium_static(m)
